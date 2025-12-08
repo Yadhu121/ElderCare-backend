@@ -1,0 +1,33 @@
+﻿@model ElderProjectjr.Models.OTPVerifyModel
+
+@{
+    ViewData["Title"] = "Verify OTP";
+}
+
+<h2>Verify Email</h2>
+
+@if (TempData["OTP"] != null)
+{
+    <!-- For debugging only: remove in production -->
+    <p><strong>DEBUG OTP:</strong> @TempData["OTP"]</p>
+}
+
+<form asp-action="VerifyOtp" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <input type="hidden" asp-for="Email" />
+
+    <p>We have sent an OTP to: <strong>@Model.Email</strong></p>
+
+    <div class="mb-3">
+        <label asp-for="OTP" class="form-label"></label>
+        <input asp-for="OTP" class="form-control" />
+        <span asp-validation-for="OTP" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Verify</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
