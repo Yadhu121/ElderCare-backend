@@ -1,0 +1,41 @@
+﻿@model wellcare.Models.OtpVerifyModel
+
+<h2>Email Verification</h2>
+
+@if (ViewBag.Error != null)
+{
+    <div style="color:red;">
+        @ViewBag.Error
+    </div>
+}
+
+<form asp-action="Verify" method="post">
+    <input type="hidden" asp-for="Email" />
+
+    <div>
+        <label>Enter OTP</label>
+        <input asp-for="OTP" />
+        <span asp-validation-for="OTP"></span>
+    </div>
+
+    <button type="submit">Verify OTP</button>
+</form>
+
+<hr />
+
+<form asp-action="Cancel" method="post">
+    <input type="hidden" asp-for="Email" />
+    <button type="submit" style="color:red;">
+        Cancel & Delete Account
+    </button>
+</form>
+
+<form asp-action="Resend" method="post">
+    <input type="hidden" name="email" value="@Model.Email" />
+    <button type="submit">Resend OTP</button>
+</form>
+
+@if (TempData["message"] != null)
+{
+    <p style="color:green">@TempData["message"]</p>
+}

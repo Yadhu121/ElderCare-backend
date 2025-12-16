@@ -8,6 +8,13 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<DBConnect>();
 builder.Services.AddScoped<CareTaker>();
 builder.Services.AddTransient<EmailService>();
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 
 var app = builder.Build();
 
@@ -18,12 +25,14 @@ if (!app.Environment.IsDevelopment())
 }
 app.UseStaticFiles();
 
+app.UseSession();
+
 app.UseRouting();
 
 app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=CareTaker}/{action=Register}/{id?}");
+    pattern: "{controller=caretakerLogin}/{action=Login}/{id?}");
 
 app.Run();

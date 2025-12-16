@@ -1,46 +1,42 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\",
+  "WorkspaceRootPath": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|c:\\users\\yadhu\\source\\repos\\elderprojectjr\\elderprojectjr\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|solutionrelative:elderprojectjr\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|c:\\users\\yadhu\\source\\repos\\elderprojectjr\\elderprojectjr\\controllers\\caretakercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|c:\\users\\yadhu\\eldercare-backend\\elderprojectjr\\elderprojectjr\\controllers\\caretakercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|solutionrelative:elderprojectjr\\controllers\\caretakercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|c:\\users\\yadhu\\source\\repos\\elderprojectjr\\elderprojectjr\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|solutionrelative:elderprojectjr\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|c:\\users\\yadhu\\source\\repos\\elderprojectjr\\elderprojectjr\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|solutionrelative:elderprojectjr\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|c:\\users\\yadhu\\source\\repos\\elderprojectjr\\elderprojectjr\\views\\caretaker\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|solutionrelative:elderprojectjr\\views\\caretaker\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|c:\\users\\yadhu\\source\\repos\\elderprojectjr\\elderprojectjr\\models\\caretakermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|c:\\users\\yadhu\\eldercare-backend\\elderprojectjr\\elderprojectjr\\models\\caretakermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|solutionrelative:elderprojectjr\\models\\caretakermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|c:\\users\\yadhu\\source\\repos\\elderprojectjr\\elderprojectjr\\models\\caretaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|c:\\users\\yadhu\\eldercare-backend\\elderprojectjr\\elderprojectjr\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|solutionrelative:elderprojectjr\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|c:\\users\\yadhu\\eldercare-backend\\elderprojectjr\\elderprojectjr\\models\\caretaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|solutionrelative:elderprojectjr\\models\\caretaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|c:\\users\\yadhu\\source\\repos\\elderprojectjr\\elderprojectjr\\models\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|c:\\users\\yadhu\\eldercare-backend\\elderprojectjr\\elderprojectjr\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|solutionrelative:elderprojectjr\\services\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|c:\\users\\yadhu\\eldercare-backend\\elderprojectjr\\elderprojectjr\\controllers\\caretakerlogincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|solutionrelative:elderprojectjr\\controllers\\caretakerlogincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|c:\\users\\yadhu\\eldercare-backend\\elderprojectjr\\elderprojectjr\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|solutionrelative:elderprojectjr\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|c:\\users\\yadhu\\eldercare-backend\\elderprojectjr\\elderprojectjr\\models\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|solutionrelative:elderprojectjr\\models\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|c:\\users\\yadhu\\source\\repos\\elderprojectjr\\elderprojectjr\\models\\otpverifymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|solutionrelative:elderprojectjr\\models\\otpverifymodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|c:\\users\\yadhu\\source\\repos\\elderprojectjr\\elderprojectjr\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|solutionrelative:elderprojectjr\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|c:\\users\\yadhu\\eldercare-backend\\elderprojectjr\\elderprojectjr\\views\\caretakerlogin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4DC49F67-FD1A-899C-1BF6-E117E5325744}|ElderProjectjr\\ElderProjectjr.csproj|solutionrelative:elderprojectjr\\views\\caretakerlogin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,137 +46,116 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EmailService.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\Services\\EmailService.cs",
-              "RelativeDocumentMoniker": "ElderProjectjr\\Services\\EmailService.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\Services\\EmailService.cs",
-              "RelativeToolTip": "ElderProjectjr\\Services\\EmailService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T11:37:04.066Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\appsettings.json",
-              "RelativeDocumentMoniker": "ElderProjectjr\\appsettings.json",
-              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\appsettings.json",
-              "RelativeToolTip": "ElderProjectjr\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-12-08T11:31:18.86Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "OTPVerifyModel.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\Models\\OTPVerifyModel.cs",
-              "RelativeDocumentMoniker": "ElderProjectjr\\Models\\OTPVerifyModel.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\Models\\OTPVerifyModel.cs",
-              "RelativeToolTip": "ElderProjectjr\\Models\\OTPVerifyModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "CareTakerController.cs",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\ElderProjectjr\\Controllers\\CareTakerController.cs",
+              "RelativeDocumentMoniker": "ElderProjectjr\\Controllers\\CareTakerController.cs",
+              "ToolTip": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\ElderProjectjr\\Controllers\\CareTakerController.cs",
+              "RelativeToolTip": "ElderProjectjr\\Controllers\\CareTakerController.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAAIwFcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T11:18:46.705Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "ElderProjectjr\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "ElderProjectjr\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T07:01:12.655Z",
+              "WhenOpened": "2025-12-15T10:29:43.712Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\ElderProjectjr\\Program.cs",
               "RelativeDocumentMoniker": "ElderProjectjr\\Program.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\Program.cs",
+              "ToolTip": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\ElderProjectjr\\Program.cs",
               "RelativeToolTip": "ElderProjectjr\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T06:58:14.612Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-15T10:29:50.84Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Register.cshtml",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\Views\\CareTaker\\Register.cshtml",
-              "RelativeDocumentMoniker": "ElderProjectjr\\Views\\CareTaker\\Register.cshtml",
-              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\Views\\CareTaker\\Register.cshtml",
-              "RelativeToolTip": "ElderProjectjr\\Views\\CareTaker\\Register.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-08T06:54:56.426Z",
-              "EditorCaption": ""
+              "DocumentIndex": 3,
+              "Title": "CareTaker.cs",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\ElderProjectjr\\Models\\CareTaker.cs",
+              "RelativeDocumentMoniker": "ElderProjectjr\\Models\\CareTaker.cs",
+              "ToolTip": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\ElderProjectjr\\Models\\CareTaker.cs",
+              "RelativeToolTip": "ElderProjectjr\\Models\\CareTaker.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T10:43:57.837Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CareTakerController.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\Controllers\\CareTakerController.cs",
-              "RelativeDocumentMoniker": "ElderProjectjr\\Controllers\\CareTakerController.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\Controllers\\CareTakerController.cs",
-              "RelativeToolTip": "ElderProjectjr\\Controllers\\CareTakerController.cs",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAABgAAABHAAAAAAAAAA==",
+              "Title": "CaretakerModel.cs",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\ElderProjectjr\\Models\\CaretakerModel.cs",
+              "RelativeDocumentMoniker": "ElderProjectjr\\Models\\CaretakerModel.cs",
+              "ToolTip": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\ElderProjectjr\\Models\\CaretakerModel.cs",
+              "RelativeToolTip": "ElderProjectjr\\Models\\CaretakerModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T05:22:31.364Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-15T10:32:29.347Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\ElderProjectjr\\Services\\EmailService.cs",
+              "RelativeDocumentMoniker": "ElderProjectjr\\Services\\EmailService.cs",
+              "ToolTip": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\ElderProjectjr\\Services\\EmailService.cs",
+              "RelativeToolTip": "ElderProjectjr\\Services\\EmailService.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAiwDcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-15T11:13:35.689Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "CaretakerModel.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\Models\\CaretakerModel.cs",
-              "RelativeDocumentMoniker": "ElderProjectjr\\Models\\CaretakerModel.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\Models\\CaretakerModel.cs",
-              "RelativeToolTip": "ElderProjectjr\\Models\\CaretakerModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAASAAAAAAAAAA==",
+              "Title": "caretakerLoginController.cs",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\ElderProjectjr\\Controllers\\caretakerLoginController.cs",
+              "RelativeDocumentMoniker": "ElderProjectjr\\Controllers\\caretakerLoginController.cs",
+              "ToolTip": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\ElderProjectjr\\Controllers\\caretakerLoginController.cs",
+              "RelativeToolTip": "ElderProjectjr\\Controllers\\caretakerLoginController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T06:53:55.566Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-15T10:29:03.536Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "CareTaker.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\Models\\CareTaker.cs",
-              "RelativeDocumentMoniker": "ElderProjectjr\\Models\\CareTaker.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\Models\\CareTaker.cs",
-              "RelativeToolTip": "ElderProjectjr\\Models\\CareTaker.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAowB8AAABoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T05:01:27.733Z",
-              "EditorCaption": ""
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\ElderProjectjr\\appsettings.json",
+              "RelativeDocumentMoniker": "ElderProjectjr\\appsettings.json",
+              "ToolTip": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\ElderProjectjr\\appsettings.json",
+              "RelativeToolTip": "ElderProjectjr\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-15T10:44:06.623Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "DBConnect.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\Models\\DBConnect.cs",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\ElderProjectjr\\Models\\DBConnect.cs",
               "RelativeDocumentMoniker": "ElderProjectjr\\Models\\DBConnect.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\Models\\DBConnect.cs",
+              "ToolTip": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\ElderProjectjr\\Models\\DBConnect.cs",
               "RelativeToolTip": "ElderProjectjr\\Models\\DBConnect.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-08T04:44:02.584Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-15T10:53:01.738Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\ElderProjectjr\\Views\\caretakerLogin\\Login.cshtml",
+              "RelativeDocumentMoniker": "ElderProjectjr\\Views\\caretakerLogin\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\ElderProjectjr\\Views\\caretakerLogin\\Login.cshtml",
+              "RelativeToolTip": "ElderProjectjr\\Views\\caretakerLogin\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-15T10:29:21.151Z"
             }
           ]
         }

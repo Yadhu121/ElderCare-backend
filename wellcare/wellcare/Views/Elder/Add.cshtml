@@ -1,0 +1,22 @@
+﻿@model wellcare.Models.AssignElderModel
+
+<h2>Add Elder</h2>
+
+@if (ViewBag.Error != null)
+{
+    <p style="color:red">@ViewBag.Error</p>
+}
+
+<form method="post">
+    <div>
+        <label>Email</label>
+        <input asp-for="ElderEmail" />
+    </div>
+
+    <div>
+        <label>Password</label>
+        <input asp-for="ElderPassword" type="password" />
+    </div>
+
+    <button type="submit">Add Elder</button>
+</form>

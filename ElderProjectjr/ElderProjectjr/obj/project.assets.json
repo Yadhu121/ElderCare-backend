@@ -810,11 +810,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\ElderProjectjr.csproj",
+      "projectUniqueName": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\ElderProjectjr\\ElderProjectjr.csproj",
       "projectName": "ElderProjectjr",
-      "projectPath": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\ElderProjectjr.csproj",
+      "projectPath": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\ElderProjectjr\\ElderProjectjr.csproj",
       "packagesPath": "C:\\Users\\Yadhu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Yadhu\\source\\repos\\ElderProjectjr\\ElderProjectjr\\obj\\",
+      "outputPath": "C:\\Users\\Yadhu\\ElderCare-backend\\ElderProjectjr\\ElderProjectjr\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

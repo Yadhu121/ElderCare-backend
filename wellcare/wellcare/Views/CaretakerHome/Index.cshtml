@@ -1,0 +1,35 @@
+﻿@model List<(int ElderID, string ElderName)>
+
+<h2>Caretaker Home</h2>
+
+<h3>My Elders</h3>
+
+@if (Model.Count == 0)
+{
+    <p>No elders assigned yet.</p>
+}
+else
+{
+    <ul>
+        @foreach (var elder in Model)
+        {
+            <li>
+                <a asp-controller="Elder"
+                   asp-action="Profile"
+                   asp-route-id="@elder.ElderID">
+                    @elder.ElderName
+                </a>
+            </li>
+        }
+    </ul>
+}
+
+<hr />
+
+<a asp-controller="Elder" asp-action="Add">
+    <button>Add Elder</button>
+</a>
+
+<a asp-controller="logout" asp-action="Logout">
+    <button>Logout</button>
+</a>

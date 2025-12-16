@@ -11,53 +11,61 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ElderProjectjr
 build_property.RootNamespace = ElderProjectjr
-build_property.ProjectDir = C:\Users\Yadhu\source\repos\ElderProjectjr\ElderProjectjr\
+build_property.ProjectDir = C:\Users\Yadhu\ElderCare-backend\ElderProjectjr\ElderProjectjr\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Yadhu\source\repos\ElderProjectjr\ElderProjectjr
+build_property.MSBuildProjectDirectory = C:\Users\Yadhu\ElderCare-backend\ElderProjectjr\ElderProjectjr
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Yadhu/source/repos/ElderProjectjr/ElderProjectjr/Views/CareTaker/OtpVerifiedSuccess.cshtml]
+[C:/Users/Yadhu/ElderCare-backend/ElderProjectjr/ElderProjectjr/Views/caretakerLogin/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcY2FyZXRha2VyTG9naW5cRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Yadhu/ElderCare-backend/ElderProjectjr/ElderProjectjr/Views/caretakerLogin/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcY2FyZXRha2VyTG9naW5cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Yadhu/ElderCare-backend/ElderProjectjr/ElderProjectjr/Views/CareTaker/OtpVerifiedSuccess.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZVRha2VyXE90cFZlcmlmaWVkU3VjY2Vzcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/source/repos/ElderProjectjr/ElderProjectjr/Views/CareTaker/Register.cshtml]
+[C:/Users/Yadhu/ElderCare-backend/ElderProjectjr/ElderProjectjr/Views/CareTaker/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZVRha2VyXFJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/source/repos/ElderProjectjr/ElderProjectjr/Views/CareTaker/VerifyOtp.cshtml]
+[C:/Users/Yadhu/ElderCare-backend/ElderProjectjr/ElderProjectjr/Views/CareTaker/VerifyOtp.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZVRha2VyXFZlcmlmeU90cC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/source/repos/ElderProjectjr/ElderProjectjr/Views/Home/Index.cshtml]
+[C:/Users/Yadhu/ElderCare-backend/ElderProjectjr/ElderProjectjr/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/source/repos/ElderProjectjr/ElderProjectjr/Views/Home/Privacy.cshtml]
+[C:/Users/Yadhu/ElderCare-backend/ElderProjectjr/ElderProjectjr/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/source/repos/ElderProjectjr/ElderProjectjr/Views/Shared/Error.cshtml]
+[C:/Users/Yadhu/ElderCare-backend/ElderProjectjr/ElderProjectjr/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/source/repos/ElderProjectjr/ElderProjectjr/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Yadhu/ElderCare-backend/ElderProjectjr/ElderProjectjr/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/source/repos/ElderProjectjr/ElderProjectjr/Views/_ViewImports.cshtml]
+[C:/Users/Yadhu/ElderCare-backend/ElderProjectjr/ElderProjectjr/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/source/repos/ElderProjectjr/ElderProjectjr/Views/_ViewStart.cshtml]
+[C:/Users/Yadhu/ElderCare-backend/ElderProjectjr/ElderProjectjr/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/source/repos/ElderProjectjr/ElderProjectjr/Views/Shared/_Layout.cshtml]
+[C:/Users/Yadhu/ElderCare-backend/ElderProjectjr/ElderProjectjr/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-1guqg68a38
