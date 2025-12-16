@@ -15,6 +15,7 @@ builder.Services.AddScoped<OtpTable>();
 builder.Services.AddTransient<EmailService>();
 builder.Services.AddScoped<elderTable>();
 builder.Services.AddScoped<CaretakerElderService>();
+builder.Services.AddScoped<elderProfile>();
 
 var app = builder.Build();
 

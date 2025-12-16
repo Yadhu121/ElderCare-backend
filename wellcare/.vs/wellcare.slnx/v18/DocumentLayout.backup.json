@@ -3,56 +3,76 @@
   "WorkspaceRootPath": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\controllers\\logoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\controllers\\logoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\controllers\\eldercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\controllers\\eldercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\views\\caretakerhome\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\views\\caretakerhome\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\controllers\\caretakerhomecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\controllers\\caretakerhomecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\controllers\\caretakerlogincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\controllers\\caretakerlogincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\views\\elder\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\views\\elder\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\models\\elderprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\models\\elderprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\models\\elderprofileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\models\\elderprofileviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\models\\caretakerelderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\models\\caretakerelderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\controllers\\eldercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\controllers\\eldercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\models\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\models\\dbconnect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\models\\eldertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\models\\eldertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\controllers\\caretakerregistercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\controllers\\caretakerregistercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\models\\caretakertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\models\\caretakertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\models\\caretakerregister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\models\\caretakerregister.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\views\\elder\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\views\\elder\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\models\\caretakerlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\models\\caretakerlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\models\\assigneldermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\models\\assigneldermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\models\\eldertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\models\\eldertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\views\\password\\reset.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\views\\password\\reset.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\controllers\\passwordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\controllers\\passwordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\views\\password\\forgot.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\views\\password\\forgot.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\models\\resetpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\models\\resetpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\models\\caretakertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\models\\caretakertable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\models\\otptable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\models\\otptable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\source\\repos\\wellcare\\wellcare\\views\\caretakerlogin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\views\\caretakerlogin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,60 +82,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "logoutController.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Controllers\\logoutController.cs",
-              "RelativeDocumentMoniker": "wellcare\\Controllers\\logoutController.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Controllers\\logoutController.cs",
-              "RelativeToolTip": "wellcare\\Controllers\\logoutController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-16T13:35:58.527Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Program.cs",
-              "RelativeDocumentMoniker": "wellcare\\Program.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Program.cs",
-              "RelativeToolTip": "wellcare\\Program.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-16T10:52:32.662Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Add.cshtml",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Views\\Elder\\Add.cshtml",
-              "RelativeDocumentMoniker": "wellcare\\Views\\Elder\\Add.cshtml",
-              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Views\\Elder\\Add.cshtml",
-              "RelativeToolTip": "wellcare\\Views\\Elder\\Add.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-16T10:50:42.098Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ElderController.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Controllers\\ElderController.cs",
-              "RelativeDocumentMoniker": "wellcare\\Controllers\\ElderController.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Controllers\\ElderController.cs",
-              "RelativeToolTip": "wellcare\\Controllers\\ElderController.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAkwDgAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-16T10:48:17.364Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -124,113 +92,230 @@
               "RelativeDocumentMoniker": "wellcare\\Views\\CaretakerHome\\Index.cshtml",
               "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Views\\CaretakerHome\\Index.cshtml",
               "RelativeToolTip": "wellcare\\Views\\CaretakerHome\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAkwBAAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-12-16T10:47:59.512Z",
+              "WhenOpened": "2025-12-16T14:33:53.936Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "CaretakerHomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Controllers\\CaretakerHomeController.cs",
-              "RelativeDocumentMoniker": "wellcare\\Controllers\\CaretakerHomeController.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Controllers\\CaretakerHomeController.cs",
-              "RelativeToolTip": "wellcare\\Controllers\\CaretakerHomeController.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAwAAAAJAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Program.cs",
+              "RelativeDocumentMoniker": "wellcare\\Program.cs",
+              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Program.cs",
+              "RelativeToolTip": "wellcare\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-16T10:47:18.059Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CaretakerElderService.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\CaretakerElderService.cs",
-              "RelativeDocumentMoniker": "wellcare\\Models\\CaretakerElderService.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\CaretakerElderService.cs",
-              "RelativeToolTip": "wellcare\\Models\\CaretakerElderService.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAYwCcAAABrAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-16T10:43:41.857Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "caretakerTable.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\caretakerTable.cs",
-              "RelativeDocumentMoniker": "wellcare\\Models\\caretakerTable.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\caretakerTable.cs",
-              "RelativeToolTip": "wellcare\\Models\\caretakerTable.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAFwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-16T10:36:54.207Z",
+              "WhenOpened": "2025-12-16T14:33:28.689Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "caretakerLoginController.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Controllers\\caretakerLoginController.cs",
-              "RelativeDocumentMoniker": "wellcare\\Controllers\\caretakerLoginController.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Controllers\\caretakerLoginController.cs",
-              "RelativeToolTip": "wellcare\\Controllers\\caretakerLoginController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAABNAAAAAAAAAA==",
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Views\\Elder\\Profile.cshtml",
+              "RelativeDocumentMoniker": "wellcare\\Views\\Elder\\Profile.cshtml",
+              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Views\\Elder\\Profile.cshtml",
+              "RelativeToolTip": "wellcare\\Views\\Elder\\Profile.cshtml",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAkwCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-16T14:33:21.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ElderController.cs",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Controllers\\ElderController.cs",
+              "RelativeDocumentMoniker": "wellcare\\Controllers\\ElderController.cs",
+              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Controllers\\ElderController.cs",
+              "RelativeToolTip": "wellcare\\Controllers\\ElderController.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAwwAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-16T10:51:53.438Z",
+              "WhenOpened": "2025-12-16T14:31:32.909Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "caretakerRegisterController.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Controllers\\caretakerRegisterController.cs",
-              "RelativeDocumentMoniker": "wellcare\\Controllers\\caretakerRegisterController.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Controllers\\caretakerRegisterController.cs",
-              "RelativeToolTip": "wellcare\\Controllers\\caretakerRegisterController.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Title": "DBConnect.cs",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\DBConnect.cs",
+              "RelativeDocumentMoniker": "wellcare\\Models\\DBConnect.cs",
+              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\DBConnect.cs",
+              "RelativeToolTip": "wellcare\\Models\\DBConnect.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-16T10:59:32.45Z",
+              "WhenOpened": "2025-12-16T14:26:41.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "elderProfile.cs",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\elderProfile.cs",
+              "RelativeDocumentMoniker": "wellcare\\Models\\elderProfile.cs",
+              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\elderProfile.cs",
+              "RelativeToolTip": "wellcare\\Models\\elderProfile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T14:22:25.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ElderProfileViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\ElderProfileViewModel.cs",
+              "RelativeDocumentMoniker": "wellcare\\Models\\ElderProfileViewModel.cs",
+              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\ElderProfileViewModel.cs",
+              "RelativeToolTip": "wellcare\\Models\\ElderProfileViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T14:20:12.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CaretakerElderService.cs",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\CaretakerElderService.cs",
+              "RelativeDocumentMoniker": "wellcare\\Models\\CaretakerElderService.cs",
+              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\CaretakerElderService.cs",
+              "RelativeToolTip": "wellcare\\Models\\CaretakerElderService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T14:19:37.56Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "caretakerRegister.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\caretakerRegister.cs",
-              "RelativeDocumentMoniker": "wellcare\\Models\\caretakerRegister.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\caretakerRegister.cs",
-              "RelativeToolTip": "wellcare\\Models\\caretakerRegister.cs",
+              "Title": "caretakerLogin.cs",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\caretakerLogin.cs",
+              "RelativeDocumentMoniker": "wellcare\\Models\\caretakerLogin.cs",
+              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\caretakerLogin.cs",
+              "RelativeToolTip": "wellcare\\Models\\caretakerLogin.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-16T10:59:43.625Z",
+              "WhenOpened": "2025-12-16T14:19:36.744Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "elderTable.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\elderTable.cs",
-              "RelativeDocumentMoniker": "wellcare\\Models\\elderTable.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\elderTable.cs",
-              "RelativeToolTip": "wellcare\\Models\\elderTable.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-16T10:41:19.071Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "AssignElderModel.cs",
               "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\AssignElderModel.cs",
               "RelativeDocumentMoniker": "wellcare\\Models\\AssignElderModel.cs",
               "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\AssignElderModel.cs",
               "RelativeToolTip": "wellcare\\Models\\AssignElderModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-16T10:36:29.294Z",
+              "WhenOpened": "2025-12-16T14:19:34.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "elderTable.cs",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\elderTable.cs",
+              "RelativeDocumentMoniker": "wellcare\\Models\\elderTable.cs",
+              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\elderTable.cs",
+              "RelativeToolTip": "wellcare\\Models\\elderTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T14:19:28.881Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Reset.cshtml",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Views\\Password\\Reset.cshtml",
+              "RelativeDocumentMoniker": "wellcare\\Views\\Password\\Reset.cshtml",
+              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Views\\Password\\Reset.cshtml",
+              "RelativeToolTip": "wellcare\\Views\\Password\\Reset.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-16T14:14:42.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Forgot.cshtml",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Views\\Password\\Forgot.cshtml",
+              "RelativeDocumentMoniker": "wellcare\\Views\\Password\\Forgot.cshtml",
+              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Views\\Password\\Forgot.cshtml",
+              "RelativeToolTip": "wellcare\\Views\\Password\\Forgot.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-16T14:09:09.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Views\\caretakerLogin\\Login.cshtml",
+              "RelativeDocumentMoniker": "wellcare\\Views\\caretakerLogin\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Views\\caretakerLogin\\Login.cshtml",
+              "RelativeToolTip": "wellcare\\Views\\caretakerLogin\\Login.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAkwCkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-12-16T14:06:49.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "OtpTable.cs",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\OtpTable.cs",
+              "RelativeDocumentMoniker": "wellcare\\Models\\OtpTable.cs",
+              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\OtpTable.cs",
+              "RelativeToolTip": "wellcare\\Models\\OtpTable.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAYwGcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T14:02:04.699Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PasswordController.cs",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Controllers\\PasswordController.cs",
+              "RelativeDocumentMoniker": "wellcare\\Controllers\\PasswordController.cs",
+              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Controllers\\PasswordController.cs",
+              "RelativeToolTip": "wellcare\\Controllers\\PasswordController.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowCgAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T14:00:05.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "caretakerTable.cs",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\caretakerTable.cs",
+              "RelativeDocumentMoniker": "wellcare\\Models\\caretakerTable.cs",
+              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\caretakerTable.cs",
+              "RelativeToolTip": "wellcare\\Models\\caretakerTable.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAYwFIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T13:58:32.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "resetPassword.cs",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\resetPassword.cs",
+              "RelativeDocumentMoniker": "wellcare\\Models\\resetPassword.cs",
+              "ToolTip": "C:\\Users\\Yadhu\\source\\repos\\wellcare\\wellcare\\Models\\resetPassword.cs",
+              "RelativeToolTip": "wellcare\\Models\\resetPassword.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-16T13:54:36.072Z",
               "EditorCaption": ""
             }
           ]

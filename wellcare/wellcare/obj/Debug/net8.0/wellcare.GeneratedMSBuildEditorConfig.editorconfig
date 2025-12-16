@@ -38,6 +38,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxkZXJcQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Yadhu/source/repos/wellcare/wellcare/Views/Elder/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxkZXJcUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Yadhu/source/repos/wellcare/wellcare/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -48,6 +52,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Yadhu/source/repos/wellcare/wellcare/Views/Otp/Verify.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3RwXFZlcmlmeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Yadhu/source/repos/wellcare/wellcare/Views/Password/Forgot.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzc3dvcmRcRm9yZ290LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Yadhu/source/repos/wellcare/wellcare/Views/Password/Reset.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzc3dvcmRcUmVzZXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Yadhu/source/repos/wellcare/wellcare/Views/Shared/Error.cshtml]

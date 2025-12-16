@@ -68,8 +68,36 @@ namespace wellcare.Models
                     return reader["OTP"].ToString();
                 }
             }
-
             return null;
+        }
+        public void InsertOtpForPasswordReset(string email, string otp)
+        {
+            using SqlConnection con = _db.GetConnection();
+            using SqlCommand cmd = new SqlCommand("sp_otp_password_reset", con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@OTP", otp);
+
+            con.Open();
+            cmd.ExecuteNonQuery();
+        }
+        public int VerifyPasswordResetOtp(string email, string otp)
+        {
+            using SqlConnection con = _db.GetConnection();
+            using SqlCommand cmd = new SqlCommand("sp_password_reset_verify", con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@OTP", otp);
+
+            con.Open();
+
+            using var reader = cmd.ExecuteReader();
+            if (reader.Read())
+                return Convert.ToInt32(reader["Status"]);
+
+            return -1;
         }
     }
 }

@@ -1,0 +1,11 @@
+﻿@model wellcare.Models.ForgotPasswordModel
+
+<h2>Forgot Password</h2>
+
+<form asp-action="Forgot" method="post">
+    <label>Email</label>
+    <input asp-for="Email" />
+    <span asp-validation-for="Email"></span>
+
+    <button type="submit">Send OTP</button>
+</form>

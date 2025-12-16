@@ -1,0 +1,16 @@
+﻿@model wellcare.Models.ResetPasswordModel
+
+<form asp-action="Reset" method="post">
+    <input type="hidden" asp-for="Email" />
+
+    <label>OTP</label>
+    <input asp-for="OTP" />
+
+    <label>New Password</label>
+    <input asp-for="NewPassword" type="password" />
+
+    <label>Confirm Password</label>
+    <input asp-for="ConfirmPassword" type="password" />
+
+    <button type="submit">Reset Password</button>
+</form>

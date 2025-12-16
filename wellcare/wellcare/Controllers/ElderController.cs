@@ -7,13 +7,15 @@ namespace wellcare.Controllers
     {
         private readonly elderTable _elderRepo;
         private readonly CaretakerElderService _linkService;
+        private readonly elderProfile _elderProfile;
 
         public ElderController(
             elderTable elderRepo,
-            CaretakerElderService linkService)
+            CaretakerElderService linkService, elderProfile elderProfile)
         {
             _elderRepo = elderRepo;
             _linkService = linkService;
+            _elderProfile = elderProfile;
         }
 
         [HttpGet]
@@ -64,6 +66,26 @@ namespace wellcare.Controllers
 
             TempData["Success"] = "Elder added successfully";
             return RedirectToAction("Index", "CaretakerHome");
+        }
+        
+        [HttpGet]
+        public IActionResult Profile(int id)
+        {
+            int? caretakerId = HttpContext.Session.GetInt32("CareTakerID");
+
+            if (caretakerId == null)
+            {
+                return RedirectToAction("Login", "caretakerLogin");
+            }
+
+            var elder = _elderProfile.GetElderProfile(caretakerId.Value, id);
+
+            if (elder == null)
+            {
+                return Unauthorized();
+            }
+
+            return View(elder);
         }
     }
 }

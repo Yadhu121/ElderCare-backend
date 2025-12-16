@@ -91,5 +91,16 @@ namespace wellcare.Models
 
             return (1, careTakerID, firstName);
         }
+        public void UpdatePassword(string email, string newHash)
+        {
+            using SqlConnection con = _db.GetConnection();
+            using SqlCommand cmd = new SqlCommand("update caretakerTable set PasswordHash=@p where Email=@e", con);
+
+            cmd.Parameters.AddWithValue("@p", newHash);
+            cmd.Parameters.AddWithValue("@e", email);
+
+            con.Open();
+            cmd.ExecuteNonQuery();
+        }
     }
 }
