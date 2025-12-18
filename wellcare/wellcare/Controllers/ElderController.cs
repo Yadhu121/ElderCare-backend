@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using wellcare.Models;
 
 namespace wellcare.Controllers
 {
+    [Authorize]
     public class ElderController : Controller
     {
         private readonly elderTable _elderRepo;
@@ -30,12 +33,21 @@ namespace wellcare.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            int? caretakerId = HttpContext.Session.GetInt32("CareTakerID");
+            //int? caretakerId = HttpContext.Session.GetInt32("CareTakerID");
 
-            if (caretakerId == null)
+            var caretakerIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (caretakerIdClaim == null)
             {
                 return RedirectToAction("Login", "caretakerLogin");
             }
+
+            int caretakerId = int.Parse(caretakerIdClaim);
+
+
+            //if (caretakerId == null)
+            //{
+            //    return RedirectToAction("Login", "caretakerLogin");
+            //}
 
 
             var elder = _elderRepo.GetElderByEmail(model.ElderEmail);
@@ -56,7 +68,8 @@ namespace wellcare.Controllers
                 return View(model);
             }
 
-            int status = _linkService.AssignElder(caretakerId.Value, model.ElderEmail);
+            //int status = _linkService.AssignElder(caretakerId.Value, model.ElderEmail);
+            int status = _linkService.AssignElder(caretakerId, model.ElderEmail);
 
             if (status == -2)
             {
@@ -71,14 +84,24 @@ namespace wellcare.Controllers
         [HttpGet]
         public IActionResult Profile(int id)
         {
-            int? caretakerId = HttpContext.Session.GetInt32("CareTakerID");
+            //int? caretakerId = HttpContext.Session.GetInt32("CareTakerID");
 
-            if (caretakerId == null)
+            var caretakerIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (caretakerIdClaim == null)
             {
                 return RedirectToAction("Login", "caretakerLogin");
             }
 
-            var elder = _elderProfile.GetElderProfile(caretakerId.Value, id);
+            int caretakerId = int.Parse(caretakerIdClaim);
+
+
+            //if (caretakerId == null)
+            //{
+            //    return RedirectToAction("Login", "caretakerLogin");
+            //}
+
+            //var elder = _elderProfile.GetElderProfile(caretakerId.Value, id);
+            var elder = _elderProfile.GetElderProfile(caretakerId, id);
 
             if (elder == null)
             {

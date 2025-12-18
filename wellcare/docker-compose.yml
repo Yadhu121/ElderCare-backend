@@ -1,0 +1,44 @@
+services:
+  db:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: wellcare-db
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "StrongPassword@123"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
+    restart: always
+
+  db-init:
+    image: mcr.microsoft.com/mssql-tools
+    depends_on:
+      - db
+
+    volumes:
+      - ./docker/wellcare_init_.sql:/init.sql
+    command: >
+      bash -c "
+      sqlcmd -S db -U sa -P StrongPassword@123 -i /init.sql
+      "
+
+  web:
+    build:
+      context: ./wellcare
+    container_name: wellcare-web
+    ports:
+      - "5000:8080"
+    depends_on:
+      - db
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__DefaultConnection: >
+        Server=db;
+        Database=wellcare;
+        User Id=sa;
+        Password=StrongPassword@123;
+        TrustServerCertificate=True;
+
+volumes:
+  sql_data:

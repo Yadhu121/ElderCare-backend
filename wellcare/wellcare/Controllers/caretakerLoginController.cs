@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using wellcare.Models;
+using wellcare.Services;
 
 namespace wellcare.Controllers
 {
@@ -10,10 +11,12 @@ namespace wellcare.Controllers
     {
 
         private readonly caretakerTable _careTaker;
+        private readonly JwtService _jwtService;
 
-        public caretakerLoginController(caretakerTable careTaker)
+        public caretakerLoginController(caretakerTable careTaker, JwtService jwtService)
         {
             _careTaker = careTaker;
+            _jwtService = jwtService;
         }
         [HttpGet]
         public IActionResult Login()
@@ -53,8 +56,18 @@ namespace wellcare.Controllers
                 //return Unauthorized(new { message = "Invalid password" });
             }
             TempData["message"] = "Successful Login";
-            HttpContext.Session.SetInt32("CareTakerID", result.CareTakerID);
-            HttpContext.Session.SetString("CareTakerName", result.FirstName);
+            //HttpContext.Session.SetInt32("CareTakerID", result.CareTakerID);
+            //HttpContext.Session.SetString("CareTakerName", result.FirstName);
+
+            var token = _jwtService.GenerateToken(result.CareTakerID, model.Email);
+            Response.Cookies.Append("access_token", token, new CookieOptions
+            {
+                HttpOnly = true,
+                Secure = false,
+                SameSite = SameSiteMode.Strict,
+                Expires = DateTimeOffset.UtcNow.AddMinutes(60)
+            });
+
             return RedirectToAction("Index", "CaretakerHome");
             //return RedirectToAction("Dashboard");
         }

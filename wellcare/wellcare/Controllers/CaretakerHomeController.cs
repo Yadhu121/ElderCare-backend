@@ -1,8 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using wellcare.Models;
 
 namespace wellcare.Controllers
 {
+    [Authorize]
     public class CaretakerHomeController : Controller
     {
         private readonly CaretakerElderService _linkService;
@@ -13,12 +16,21 @@ namespace wellcare.Controllers
         }
         public IActionResult Index()
         {
-            int? caretakerId = HttpContext.Session.GetInt32("CareTakerID");
-
-            if (caretakerId == null)
+            //int? caretakerId = HttpContext.Session.GetInt32("CareTakerID");
+            var caretakerIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (caretakerIdClaim == null)
+            {
                 return RedirectToAction("Login", "caretakerLogin");
+            }
 
-            var elders = _linkService.GetAssignedElders(caretakerId.Value);
+            int caretakerId = int.Parse(caretakerIdClaim);
+
+
+            //if (caretakerId == null)
+            //return RedirectToAction("Login", "caretakerLogin");
+
+            //var elders = _linkService.GetAssignedElders(caretakerId.Value);
+            var elders = _linkService.GetAssignedElders(caretakerId);
 
             return View(elders);
         }
