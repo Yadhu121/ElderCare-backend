@@ -1,42 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Yadhu\\Desktop\\Projects\\wellcare\\",
+  "WorkspaceRootPath": "C:\\Users\\Yadhu\\newFolder\\Eldercare-backend\\wellcare\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\desktop\\projects\\wellcare\\wellcare\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\newfolder\\eldercare-backend\\wellcare\\wellcare\\views\\password\\reset.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\views\\password\\reset.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\desktop\\projects\\wellcare\\wellcare\\controllers\\otpcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\controllers\\otpcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\newfolder\\eldercare-backend\\wellcare\\wellcare\\views\\password\\forgot.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\views\\password\\forgot.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\desktop\\projects\\wellcare\\wellcare\\controllers\\logoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\controllers\\logoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\newfolder\\eldercare-backend\\wellcare\\wellcare\\views\\elder\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\views\\elder\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\desktop\\projects\\wellcare\\wellcare\\controllers\\passwordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\controllers\\passwordcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\newfolder\\eldercare-backend\\wellcare\\wellcare\\views\\elder\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\views\\elder\\profile.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\desktop\\projects\\wellcare\\wellcare\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\newfolder\\eldercare-backend\\wellcare\\wellcare\\views\\caretakerhome\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\views\\caretakerhome\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\desktop\\projects\\wellcare\\wellcare\\controllers\\caretakerregistercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\controllers\\caretakerregistercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\newfolder\\eldercare-backend\\wellcare\\wellcare\\views\\caretakerlogin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\views\\caretakerlogin\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\desktop\\projects\\wellcare\\wellcare\\controllers\\caretakerlogincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\controllers\\caretakerlogincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\desktop\\projects\\wellcare\\wellcare\\controllers\\eldercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\controllers\\eldercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\desktop\\projects\\wellcare\\wellcare\\controllers\\caretakerhomecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\controllers\\caretakerhomecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|c:\\users\\yadhu\\newfolder\\eldercare-backend\\wellcare\\wellcare\\views\\caretakerregister\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DCB98494-DF56-A2BD-1490-AF54A5ED0469}|wellcare\\wellcare.csproj|solutionrelative:wellcare\\views\\caretakerregister\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -51,118 +43,92 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\Desktop\\Projects\\wellcare\\wellcare\\Program.cs",
-              "RelativeDocumentMoniker": "wellcare\\Program.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\Desktop\\Projects\\wellcare\\wellcare\\Program.cs",
-              "RelativeToolTip": "wellcare\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T07:21:06.712Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PasswordController.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\Desktop\\Projects\\wellcare\\wellcare\\Controllers\\PasswordController.cs",
-              "RelativeDocumentMoniker": "wellcare\\Controllers\\PasswordController.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\Desktop\\Projects\\wellcare\\wellcare\\Controllers\\PasswordController.cs",
-              "RelativeToolTip": "wellcare\\Controllers\\PasswordController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T07:19:08.414Z",
+              "Title": "Reset.cshtml",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\newFolder\\Eldercare-backend\\wellcare\\wellcare\\Views\\Password\\Reset.cshtml",
+              "RelativeDocumentMoniker": "wellcare\\Views\\Password\\Reset.cshtml",
+              "ToolTip": "C:\\Users\\Yadhu\\newFolder\\Eldercare-backend\\wellcare\\wellcare\\Views\\Password\\Reset.cshtml",
+              "RelativeToolTip": "wellcare\\Views\\Password\\Reset.cshtml",
+              "ViewState": "AgIAAJ8AAAAAAAAAAADwv7wAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-02T02:24:07.536Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "OtpController.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\Desktop\\Projects\\wellcare\\wellcare\\Controllers\\OtpController.cs",
-              "RelativeDocumentMoniker": "wellcare\\Controllers\\OtpController.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\Desktop\\Projects\\wellcare\\wellcare\\Controllers\\OtpController.cs",
-              "RelativeToolTip": "wellcare\\Controllers\\OtpController.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAwEUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T07:19:02.086Z",
+              "Title": "Forgot.cshtml",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\newFolder\\Eldercare-backend\\wellcare\\wellcare\\Views\\Password\\Forgot.cshtml",
+              "RelativeDocumentMoniker": "wellcare\\Views\\Password\\Forgot.cshtml",
+              "ToolTip": "C:\\Users\\Yadhu\\newFolder\\Eldercare-backend\\wellcare\\wellcare\\Views\\Password\\Forgot.cshtml",
+              "RelativeToolTip": "wellcare\\Views\\Password\\Forgot.cshtml",
+              "ViewState": "AgIAAIwAAAAAAAAAAADwv6kAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-02T02:23:26.048Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "logoutController.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\Desktop\\Projects\\wellcare\\wellcare\\Controllers\\logoutController.cs",
-              "RelativeDocumentMoniker": "wellcare\\Controllers\\logoutController.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\Desktop\\Projects\\wellcare\\wellcare\\Controllers\\logoutController.cs",
-              "RelativeToolTip": "wellcare\\Controllers\\logoutController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T07:18:41.311Z",
+              "Title": "Add.cshtml",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\newFolder\\Eldercare-backend\\wellcare\\wellcare\\Views\\Elder\\Add.cshtml",
+              "RelativeDocumentMoniker": "wellcare\\Views\\Elder\\Add.cshtml",
+              "ToolTip": "C:\\Users\\Yadhu\\newFolder\\Eldercare-backend\\wellcare\\wellcare\\Views\\Elder\\Add.cshtml",
+              "RelativeToolTip": "wellcare\\Views\\Elder\\Add.cshtml",
+              "ViewState": "AgIAAJwAAAAAAAAAAADwv7kAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-02T02:22:14.631Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Profile.cshtml",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\newFolder\\Eldercare-backend\\wellcare\\wellcare\\Views\\Elder\\Profile.cshtml",
+              "RelativeDocumentMoniker": "wellcare\\Views\\Elder\\Profile.cshtml",
+              "ToolTip": "C:\\Users\\Yadhu\\newFolder\\Eldercare-backend\\wellcare\\wellcare\\Views\\Elder\\Profile.cshtml",
+              "RelativeToolTip": "wellcare\\Views\\Elder\\Profile.cshtml",
+              "ViewState": "AgIAAIQAAAAAAAAAAADwv6EAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-02T02:20:38.892Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\Desktop\\Projects\\wellcare\\wellcare\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "wellcare\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\Desktop\\Projects\\wellcare\\wellcare\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "wellcare\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T07:18:40.343Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\newFolder\\Eldercare-backend\\wellcare\\wellcare\\Views\\CaretakerHome\\Index.cshtml",
+              "RelativeDocumentMoniker": "wellcare\\Views\\CaretakerHome\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Yadhu\\newFolder\\Eldercare-backend\\wellcare\\wellcare\\Views\\CaretakerHome\\Index.cshtml",
+              "RelativeToolTip": "wellcare\\Views\\CaretakerHome\\Index.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAkwNAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-02T02:17:02.904Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "caretakerRegisterController.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\Desktop\\Projects\\wellcare\\wellcare\\Controllers\\caretakerRegisterController.cs",
-              "RelativeDocumentMoniker": "wellcare\\Controllers\\caretakerRegisterController.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\Desktop\\Projects\\wellcare\\wellcare\\Controllers\\caretakerRegisterController.cs",
-              "RelativeToolTip": "wellcare\\Controllers\\caretakerRegisterController.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAkwEYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T07:01:11.198Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "CaretakerHomeController.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\Desktop\\Projects\\wellcare\\wellcare\\Controllers\\CaretakerHomeController.cs",
-              "RelativeDocumentMoniker": "wellcare\\Controllers\\CaretakerHomeController.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\Desktop\\Projects\\wellcare\\wellcare\\Controllers\\CaretakerHomeController.cs",
-              "RelativeToolTip": "wellcare\\Controllers\\CaretakerHomeController.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwCsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T07:17:18.364Z",
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\newFolder\\Eldercare-backend\\wellcare\\wellcare\\Views\\caretakerLogin\\Login.cshtml",
+              "RelativeDocumentMoniker": "wellcare\\Views\\caretakerLogin\\Login.cshtml",
+              "ToolTip": "C:\\Users\\Yadhu\\newFolder\\Eldercare-backend\\wellcare\\wellcare\\Views\\caretakerLogin\\Login.cshtml",
+              "RelativeToolTip": "wellcare\\Views\\caretakerLogin\\Login.cshtml",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAkwKUAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-02T02:15:52.533Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "caretakerLoginController.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\Desktop\\Projects\\wellcare\\wellcare\\Controllers\\caretakerLoginController.cs",
-              "RelativeDocumentMoniker": "wellcare\\Controllers\\caretakerLoginController.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\Desktop\\Projects\\wellcare\\wellcare\\Controllers\\caretakerLoginController.cs",
-              "RelativeToolTip": "wellcare\\Controllers\\caretakerLoginController.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T07:16:09.917Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ElderController.cs",
-              "DocumentMoniker": "C:\\Users\\Yadhu\\Desktop\\Projects\\wellcare\\wellcare\\Controllers\\ElderController.cs",
-              "RelativeDocumentMoniker": "wellcare\\Controllers\\ElderController.cs",
-              "ToolTip": "C:\\Users\\Yadhu\\Desktop\\Projects\\wellcare\\wellcare\\Controllers\\ElderController.cs",
-              "RelativeToolTip": "wellcare\\Controllers\\ElderController.cs",
-              "ViewState": "AgIAAFQAAAAAAAAAAAAYwGgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-18T07:00:35.34Z",
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "C:\\Users\\Yadhu\\newFolder\\Eldercare-backend\\wellcare\\wellcare\\Views\\caretakerRegister\\Register.cshtml",
+              "RelativeDocumentMoniker": "wellcare\\Views\\caretakerRegister\\Register.cshtml",
+              "ToolTip": "C:\\Users\\Yadhu\\newFolder\\Eldercare-backend\\wellcare\\wellcare\\Views\\caretakerRegister\\Register.cshtml",
+              "RelativeToolTip": "wellcare\\Views\\caretakerRegister\\Register.cshtml",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAUwI8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-01-02T02:10:53.799Z",
               "EditorCaption": ""
             }
           ]

@@ -1,4 +1,4 @@
-﻿@model wellcare.Models.ResetPasswordModel
+﻿@*@model wellcare.Models.ResetPasswordModel
 
 <form asp-action="Reset" method="post">
     <input type="hidden" asp-for="Email" />
@@ -14,3 +14,175 @@
 
     <button type="submit">Reset Password</button>
 </form>
+*@
+
+@model wellcare.Models.ResetPasswordModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Reset Password</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #f5f7fa;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+            .header h2 {
+                margin: 0;
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+        .back-link {
+            text-decoration: none;
+            color: #4f46e5;
+            font-size: 14px;
+        }
+
+            .back-link:hover {
+                text-decoration: underline;
+            }
+
+        /* Content */
+        .content {
+            padding: 32px 24px;
+            max-width: 520px;
+        }
+
+        .form-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-subtitle {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 18px;
+        }
+
+        label {
+            font-size: 14px;
+            margin-bottom: 6px;
+            color: #333;
+        }
+
+        input {
+            padding: 10px 12px;
+            font-size: 14px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+        }
+
+            input:focus {
+                outline: none;
+                border-color: #4f46e5;
+            }
+
+        .error {
+            font-size: 12px;
+            color: #dc2626;
+            margin-top: 4px;
+        }
+
+        .btn-primary {
+            padding: 12px 20px;
+            background: #4f46e5;
+            border: none;
+            border-radius: 6px;
+            color: #ffffff;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+            .btn-primary:hover {
+                background: #4338ca;
+            }
+
+        @@media (max-width: 600px) {
+            .content {
+                padding: 20px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h2>Reset Password</h2>
+
+        <a asp-controller="caretakerLogin" asp-action="Login" class="back-link">
+            ← Back to Login
+        </a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+
+        <div class="form-title">Create a new password</div>
+        <div class="form-subtitle">
+            Enter the OTP sent to your email and choose a new password.
+        </div>
+
+        <form asp-action="Reset" method="post" novalidate>
+
+            <input type="hidden" asp-for="Email" />
+
+            <div class="form-group">
+                <label>OTP</label>
+                <input asp-for="OTP" />
+                <span asp-validation-for="OTP" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label>New Password</label>
+                <input asp-for="NewPassword" type="password" />
+                <span asp-validation-for="NewPassword" class="error"></span>
+            </div>
+
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input asp-for="ConfirmPassword" type="password" />
+                <span asp-validation-for="ConfirmPassword" class="error"></span>
+            </div>
+
+            <button type="submit" class="btn-primary">
+                Reset Password
+            </button>
+        </form>
+
+    </div>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+</body>
+</html>

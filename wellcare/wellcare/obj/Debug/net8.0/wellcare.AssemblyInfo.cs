@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("wellcare")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ab03ca8299e82b928ef690227590cd37a3284a6b")]
 [assembly: System.Reflection.AssemblyProductAttribute("wellcare")]
 [assembly: System.Reflection.AssemblyTitleAttribute("wellcare")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

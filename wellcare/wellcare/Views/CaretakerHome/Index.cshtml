@@ -1,4 +1,4 @@
-﻿@model List<(int ElderID, string ElderName)>
+﻿@* @model List<(int ElderID, string ElderName)>
 
 <h2>Caretaker Home</h2>
 
@@ -33,3 +33,176 @@ else
 <a asp-controller="logout" asp-action="Logout">
     <button>Logout</button>
 </a>
+*@
+
+@model List<(int ElderID, string ElderName)>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Caretaker Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #f5f7fa;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+            .header h2 {
+                margin: 0;
+                font-size: 20px;
+                font-weight: 600;
+            }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+            padding: 8px 14px;
+            border-radius: 6px;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #4f46e5;
+            color: #ffffff;
+        }
+
+            .btn-primary:hover {
+                background: #4338ca;
+            }
+
+        .btn-secondary {
+            background: #e5e7eb;
+            color: #111;
+        }
+
+            .btn-secondary:hover {
+                background: #d1d5db;
+            }
+
+        /* Main content */
+        .content {
+            padding: 24px;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .elder-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .elder-card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 16px;
+            border: 1px solid #e5e7eb;
+            text-decoration: none;
+            color: #111;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+            .elder-card:hover {
+                border-color: #4f46e5;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+            }
+
+        .elder-name {
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        .empty-text {
+            color: #666;
+            font-size: 14px;
+        }
+
+        @@media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .content {
+                padding: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h2>Caretaker Dashboard</h2>
+
+        <div class="header-actions">
+            <a asp-controller="Elder" asp-action="Add">
+                <button class="btn-primary">Add Elder</button>
+            </a>
+
+            <a asp-controller="logout" asp-action="Logout">
+                <button class="btn-secondary">Logout</button>
+            </a>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="content">
+
+        <div class="section-title">My Elders</div>
+
+        @if (Model.Count == 0)
+        {
+            <p class="empty-text">No elders assigned yet.</p>
+        }
+        else
+        {
+            <div class="elder-grid">
+                @foreach (var elder in Model)
+                {
+                    <a class="elder-card"
+                       asp-controller="Elder"
+                       asp-action="Profile"
+                       asp-route-id="@elder.ElderID">
+
+                        <div class="elder-name">@elder.ElderName</div>
+
+                    </a>
+                }
+            </div>
+        }
+
+    </div>
+
+</body>
+</html>
