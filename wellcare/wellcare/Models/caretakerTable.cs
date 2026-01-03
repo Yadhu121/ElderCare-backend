@@ -102,5 +102,48 @@ namespace wellcare.Models
             con.Open();
             cmd.ExecuteNonQuery();
         }
+
+        public CaretakerProfile caretakerProfile(int caretakerId)
+        {
+            using SqlConnection con = _db.GetConnection();
+            using SqlCommand cmd = new SqlCommand(@"select FirstName,LastName,Email,Phone,Age,Photo,HomeAddress,Gender,Bio from caretakerTable where CareTakerID = @caretakerId and IsEmailVerified = 1", con);
+
+            cmd.Parameters.AddWithValue("@caretakerId", caretakerId);
+
+            con.Open();
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            if (!reader.Read())
+                return null;
+
+            return new CaretakerProfile
+            {
+                FirstName = reader["FirstName"].ToString(),
+                LastName = reader["LastName"].ToString(),
+                Email = reader["Email"].ToString(),
+                Phone = reader["Phone"].ToString(),
+                Age = Convert.ToInt32(reader["Age"]),
+                Photo = reader["Photo"].ToString(),
+                HomeAddress = reader["HomeAddress"].ToString(),
+                Gender = reader["Gender"].ToString(),
+                Bio = reader["Bio"].ToString()
+            };
+        }
+
+        public void UpdateCaretakerProfile(int caretakerId, string bio, string photoPath)
+        {
+            using SqlConnection con = _db.GetConnection();
+
+            using SqlCommand cmd = new SqlCommand(
+                @"update caretakerTable set Bio = @bio, Photo = isnull(@photo, Photo) where CareTakerID = @id",con);
+
+            cmd.Parameters.AddWithValue("@bio", bio ?? "");
+            cmd.Parameters.AddWithValue("@photo", (object?)photoPath ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("@id", caretakerId);
+
+            con.Open();
+            cmd.ExecuteNonQuery();
+        }
+
     }
 }

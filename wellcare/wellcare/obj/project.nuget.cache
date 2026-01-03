@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gGx0oiYB6ZQ=",
+  "dgSpecHash": "FKZMymRSvBU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Yadhu\\newFolder\\Eldercare-backend\\wellcare\\wellcare\\wellcare.csproj",
+  "projectFilePath": "C:\\Users\\Yadhu\\Desktop\\wellNestDocker\\Eldercare-backend\\wellcare\\wellcare\\wellcare.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Yadhu\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Yadhu\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.22\\microsoft.aspnetcore.authentication.jwtbearer.8.0.22.nupkg.sha512",

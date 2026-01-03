@@ -12,7 +12,7 @@ services:
     restart: always
 
   db-init:
-    image: mcr.microsoft.com/mssql-tools
+    image: mcr.microsoft.com/mssql/server:2022-latest
     depends_on:
       - db
 
@@ -20,7 +20,7 @@ services:
       - ./docker/wellcare_init_.sql:/init.sql
     command: >
       bash -c "
-      sqlcmd -S db -U sa -P StrongPassword@123 -i /init.sql
+      /opt/mssql-tools18/bin/sqlcmd -S db -U sa -P StrongPassword@123 -C -d master -i /init.sql
       "
 
   web:

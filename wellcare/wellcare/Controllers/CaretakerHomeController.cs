@@ -39,5 +39,9 @@ namespace wellcare.Controllers
         {
             return RedirectToAction("Add", "Elder");
         }
+        public IActionResult caretakerProfile()
+        {
+            return RedirectToAction("careProfile", "caretaker");
+        }
     }
 }
