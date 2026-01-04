@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-//builder.Services.AddControllers();
+builder.Services.AddControllers();
 //builder.Services.AddDistributedMemoryCache();
 //builder.Services.AddSession();
 builder.Services.AddSingleton<DBConnect>();
@@ -72,6 +72,6 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=caretakerLogin}/{action=Login}/{id?}");
-//app.MapControllers();
+app.MapControllers();
 
 app.Run();
