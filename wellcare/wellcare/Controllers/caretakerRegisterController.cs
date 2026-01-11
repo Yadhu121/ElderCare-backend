@@ -1,38 +1,43 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
+// using System; // ❌ Not required explicitly, Random still works without this using
 using System.Threading.Tasks;
 using wellcare.Models;
 using wellcare.Services;
 
 namespace wellcare.Controllers
 {
-    //[ApiController]
-    //[Route("api/caretaker")]
-    //public class caretakerRegisterController : ControllerBase
-    public class caretakerRegisterController : Controller
+    [ApiController]
+    [Route("api/caretaker/auth")]
+    public class CaretakerRegisterController : ControllerBase
     {
         private readonly caretakerTable _careTaker;
         private readonly OtpTable _otp;
         private readonly EmailService _emailService;
-        public caretakerRegisterController(caretakerTable caretaker, OtpTable otpRepo, EmailService emailService)
+
+        public CaretakerRegisterController(
+            caretakerTable caretaker,
+            OtpTable otpRepo,
+            EmailService emailService)
         {
             _careTaker = caretaker;
             _otp = otpRepo;
             _emailService = emailService;
         }
-        [HttpGet]
-        public IActionResult Register()
-        {
-            return View();
-        }
-        //[HttpPost("register")]
-        [HttpPost]
-        //public async Task<IActionResult> Register([FromBody] caretakerRegister model)
-        public async Task<IActionResult> Register(caretakerRegister model)
+
+        // ❌ MVC register page not used in API
+        // [HttpGet]
+        // public IActionResult Register()
+        // {
+        //     return View();
+        // }
+
+        // ================= REGISTER =================
+
+        [HttpPost("register")]
+        public async Task<IActionResult> Register([FromBody] caretakerRegister model)
         {
             if (!ModelState.IsValid)
-                return View(model);
-              //return BadRequest(ModelState);
+                return BadRequest(ModelState);
 
             string passwordHash = BCrypt.Net.BCrypt.HashPassword(model.Password);
 
@@ -40,16 +45,12 @@ namespace wellcare.Controllers
 
             if (result.Status == -1)
             {
-                ViewBag.Error = "Email already registered.";
-                return View(model);
-                //return Conflict(new { message = "Email already registered." });
+                return Conflict(new { message = "Email already registered." });
             }
 
             if (result.Status == -2)
             {
-                ViewBag.Error = "Phone number already registered.";
-                return View(model);
-                //return Conflict(new { message = "Phone number already registered." });
+                return Conflict(new { message = "Phone number already registered." });
             }
 
             var random = new Random();
@@ -58,13 +59,15 @@ namespace wellcare.Controllers
             _otp.InsertOtp(result.CaretakerID, model.Email, otp);
             await _emailService.SendOtpEmailAsync(model.Email, otp);
 
-            return RedirectToAction("Verify", "Otp", new { email = model.Email });
+            // ❌ No redirect in API
+            // return RedirectToAction("Verify", "Otp", new { email = model.Email });
 
-            //return Ok(new
-            //{
-            //    message = "Registration successful. OTP sent.",
-            //    caretakerId = result.CaretakerID
-            //});
+            return Ok(new
+            {
+                message = "Registration successful. OTP sent to email.",
+                caretakerId = result.CaretakerID,
+                email = model.Email
+            });
         }
     }
 }

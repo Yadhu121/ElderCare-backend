@@ -8,8 +8,8 @@ using System.Text;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
-//builder.Services.AddControllers();
+//builder.Services.AddControllersWithViews();
+builder.Services.AddControllers();
 //builder.Services.AddDistributedMemoryCache();
 //builder.Services.AddSession();
 builder.Services.AddSingleton<DBConnect>();
@@ -69,9 +69,9 @@ app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=caretakerLogin}/{action=Login}/{id?}");
-//app.MapControllers();
+//app.MapControllerRoute(
+//    name: "default",
+//    pattern: "{controller=caretakerLogin}/{action=Login}/{id?}");
+app.MapControllers();
 
 app.Run();

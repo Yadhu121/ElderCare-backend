@@ -1,14 +1,13 @@
-﻿using wellcare.Models;
-using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using wellcare.Models;
 using wellcare.Services;
 
 namespace wellcare.Controllers
 {
-    //[ApiController]
-    //public class OtpController : ControllerBase
-    public class OtpController : Controller
+    [ApiController]
+    [Route("api/otp")]
+    public class OtpController : ControllerBase
     {
         private readonly OtpTable _otp;
         private readonly EmailService _emailService;
@@ -18,60 +17,71 @@ namespace wellcare.Controllers
             _otp = otp;
             _emailService = emailService;
         }
-        [HttpGet]
-        public IActionResult Verify(string email)
-        {
-            var vm = new OtpVerifyModel
-            {
-                Email = email
-            };
 
-            return View(vm);
-        }
+        // ❌ MVC Verify page not used in API
+        // [HttpGet]
+        // public IActionResult Verify(string email)
+        // {
+        //     var vm = new OtpVerifyModel
+        //     {
+        //         Email = email
+        //     };
+        //     return View(vm);
+        // }
 
-        //[HttpPost("verify-otp")]
-        [HttpPost]
-        //public IActionResult VerifyOtp([FromBody] OtpVerifyModel model)
-        public IActionResult Verify(OtpVerifyModel model)
+        // ================= VERIFY OTP =================
+
+        [HttpPost("verify")]
+        public IActionResult VerifyOtp([FromBody] OtpVerifyModel model)
         {
             if (!ModelState.IsValid)
-                return View(model);
+                return BadRequest(ModelState);
 
-            int status = _otp.VerifyOtp(model.Email,model.OTP);
+            int status = _otp.VerifyOtp(model.Email, model.OTP);
 
             if (status != 1)
             {
-                ViewBag.Error = "Invalid or expired OTP";
-                return View(model);
-              //return BadRequest(new { message = "Invalid or expired OTP" });
+                return BadRequest(new { message = "Invalid or expired OTP" });
             }
 
-            return RedirectToAction("Login","caretakerLogin");
-            //return Ok(new { message = "Email verified successfully" });
+            // ❌ No redirect in API
+            // return RedirectToAction("Login", "caretakerLogin");
+
+            return Ok(new { message = "Email verified successfully" });
         }
-        [HttpPost]
-        public IActionResult Cancel(string email)
+
+        // ================= CANCEL REGISTRATION =================
+
+        [HttpPost("cancel")]
+        public IActionResult Cancel([FromBody] string email)
         {
             _otp.VerifyOtp(email, "INVALID");
 
-            TempData["message"] = "Registration cancelled.";
-            return RedirectToAction("Register", "caretakerRegister");
+            // ❌ TempData and redirect not used
+            // TempData["message"] = "Registration cancelled.";
+            // return RedirectToAction("Register", "caretakerRegister");
+
+            return Ok(new { message = "Registration cancelled" });
         }
-        [HttpPost]
-        public async Task<IActionResult> Resend(string email)
+
+        // ================= RESEND OTP =================
+
+        [HttpPost("resend")]
+        public async Task<IActionResult> ResendOtp([FromBody] string email)
         {
             string? otp = _otp.ResendOtp(email);
 
             if (otp == null)
             {
-                ViewBag.Error = "Unable to resend OTP.";
-                return RedirectToAction("Verify", new { email });
+                return NotFound(new { message = "Unable to resend OTP" });
             }
 
             await _emailService.SendOtpEmailAsync(email, otp);
 
-            TempData["message"] = "New OTP sent to your email.";
-            return RedirectToAction("Verify", new { email });
+            // ❌ MVC redirect not used
+            // return RedirectToAction("Verify", new { email });
+
+            return Ok(new { message = "New OTP sent to email" });
         }
     }
 }

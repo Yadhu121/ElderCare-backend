@@ -1,7 +1,5 @@
 is_global = true
 build_property.TargetFramework = net8.0
-build_property.TargetFrameworkIdentifier = .NETCoreApp
-build_property.TargetFrameworkVersion = v8.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
@@ -11,77 +9,75 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = wellcare
 build_property.RootNamespace = wellcare
-build_property.ProjectDir = C:\Users\Yadhu\Desktop\wellNestDocker\Eldercare-backend\wellcare\wellcare\
+build_property.ProjectDir = /home/Yadhu/tempp/ElderCare-backend/wellcare/wellcare/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Yadhu\Desktop\wellNestDocker\Eldercare-backend\wellcare\wellcare
+build_property.MSBuildProjectDirectory = /home/Yadhu/tempp/ElderCare-backend/wellcare/wellcare
 build_property._RazorSourceGeneratorDebug = 
-build_property.EffectiveAnalysisLevelStyle = 8.0
-build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Yadhu/Desktop/wellNestDocker/Eldercare-backend/wellcare/wellcare/Views/CaretakerHome/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FyZXRha2VySG9tZVxJbmRleC5jc2h0bWw=
+[/home/Yadhu/tempp/ElderCare-backend/wellcare/wellcare/Views/caretaker/careProfile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvY2FyZXRha2VyL2NhcmVQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/Desktop/wellNestDocker/Eldercare-backend/wellcare/wellcare/Views/caretakerLogin/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcY2FyZXRha2VyTG9naW5cTG9naW4uY3NodG1s
+[/home/Yadhu/tempp/ElderCare-backend/wellcare/wellcare/Views/CaretakerHome/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2FyZXRha2VySG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/Desktop/wellNestDocker/Eldercare-backend/wellcare/wellcare/Views/caretakerRegister/Register.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcY2FyZXRha2VyUmVnaXN0ZXJcUmVnaXN0ZXIuY3NodG1s
+[/home/Yadhu/tempp/ElderCare-backend/wellcare/wellcare/Views/caretakerLogin/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvY2FyZXRha2VyTG9naW4vTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/Desktop/wellNestDocker/Eldercare-backend/wellcare/wellcare/Views/caretaker/careProfile.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcY2FyZXRha2VyXGNhcmVQcm9maWxlLmNzaHRtbA==
+[/home/Yadhu/tempp/ElderCare-backend/wellcare/wellcare/Views/caretakerRegister/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvY2FyZXRha2VyUmVnaXN0ZXIvUmVnaXN0ZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/Desktop/wellNestDocker/Eldercare-backend/wellcare/wellcare/Views/Elder/Add.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxkZXJcQWRkLmNzaHRtbA==
+[/home/Yadhu/tempp/ElderCare-backend/wellcare/wellcare/Views/Elder/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRWxkZXIvQWRkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/Desktop/wellNestDocker/Eldercare-backend/wellcare/wellcare/Views/Elder/Profile.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRWxkZXJcUHJvZmlsZS5jc2h0bWw=
+[/home/Yadhu/tempp/ElderCare-backend/wellcare/wellcare/Views/Elder/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRWxkZXIvUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/Desktop/wellNestDocker/Eldercare-backend/wellcare/wellcare/Views/Home/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+[/home/Yadhu/tempp/ElderCare-backend/wellcare/wellcare/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/Desktop/wellNestDocker/Eldercare-backend/wellcare/wellcare/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+[/home/Yadhu/tempp/ElderCare-backend/wellcare/wellcare/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvSG9tZS9Qcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/Desktop/wellNestDocker/Eldercare-backend/wellcare/wellcare/Views/Otp/Verify.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3RwXFZlcmlmeS5jc2h0bWw=
+[/home/Yadhu/tempp/ElderCare-backend/wellcare/wellcare/Views/Otp/Verify.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvT3RwL1ZlcmlmeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/Desktop/wellNestDocker/Eldercare-backend/wellcare/wellcare/Views/Password/Forgot.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzc3dvcmRcRm9yZ290LmNzaHRtbA==
+[/home/Yadhu/tempp/ElderCare-backend/wellcare/wellcare/Views/Password/Forgot.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGFzc3dvcmQvRm9yZ290LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/Desktop/wellNestDocker/Eldercare-backend/wellcare/wellcare/Views/Password/Reset.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFzc3dvcmRcUmVzZXQuY3NodG1s
+[/home/Yadhu/tempp/ElderCare-backend/wellcare/wellcare/Views/Password/Reset.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvUGFzc3dvcmQvUmVzZXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/Desktop/wellNestDocker/Eldercare-backend/wellcare/wellcare/Views/Shared/Error.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+[/home/Yadhu/tempp/ElderCare-backend/wellcare/wellcare/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL0Vycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/Desktop/wellNestDocker/Eldercare-backend/wellcare/wellcare/Views/Shared/_ValidationScriptsPartial.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+[/home/Yadhu/tempp/ElderCare-backend/wellcare/wellcare/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/Desktop/wellNestDocker/Eldercare-backend/wellcare/wellcare/Views/_ViewImports.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+[/home/Yadhu/tempp/ElderCare-backend/wellcare/wellcare/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/Desktop/wellNestDocker/Eldercare-backend/wellcare/wellcare/Views/_ViewStart.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+[/home/Yadhu/tempp/ElderCare-backend/wellcare/wellcare/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Yadhu/Desktop/wellNestDocker/Eldercare-backend/wellcare/wellcare/Views/Shared/_Layout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-lef6pupe2z
+[/home/Yadhu/tempp/ElderCare-backend/wellcare/wellcare/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-86j40uxmyl

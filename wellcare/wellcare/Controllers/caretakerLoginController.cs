@@ -4,82 +4,90 @@ using wellcare.Services;
 
 namespace wellcare.Controllers
 {
-    //[ApiController]
-    //[Route("api/caretaker")]
-    //public class caretakerLoginController : ControllerBase
-    public class caretakerLoginController : Controller
+    [ApiController]
+    [Route("api/caretaker/auth")]
+    public class CaretakerLoginController : ControllerBase
     {
-
         private readonly caretakerTable _careTaker;
         private readonly JwtService _jwtService;
 
-        public caretakerLoginController(caretakerTable careTaker, JwtService jwtService)
+        public CaretakerLoginController(caretakerTable careTaker, JwtService jwtService)
         {
             _careTaker = careTaker;
             _jwtService = jwtService;
         }
-        [HttpGet]
-        public IActionResult Login()
-        {
-            return View();
-        }
-        //[HttpPost("login")]
-        [HttpPost]
-        //public IActionResult Login([FromBody] caretakerLogin model)
-        public IActionResult Login(caretakerLogin model)
+
+        // ❌ MVC login page not used in API
+        // [HttpGet]
+        // public IActionResult Login()
+        // {
+        //     return View();
+        // }
+
+        // ================= LOGIN =================
+
+        [HttpPost("login")]
+        public IActionResult Login([FromBody] caretakerLogin model)
         {
             if (!ModelState.IsValid)
-                return View(model);
-            //return BadRequest(ModelState);
+                return BadRequest(ModelState);
 
             var result = _careTaker.LoginCaretaker(model);
 
             if (result.Status == -1)
             {
-                ViewBag.Error = "User not found";
-                return View(model);
-                //return Unauthorized(new { message = "User not found" });
+                return Unauthorized(new { message = "User not found" });
             }
 
             if (result.Status == -2)
             {
-                return RedirectToAction("Verify", "Otp", new { email = model.Email });
-                //TempData["message"] = "Email not verified";
-                //return View(model);
-                //return Unauthorized(new { message = "Email not verified" });
+                return Unauthorized(new
+                {
+                    message = "Email not verified",
+                    action = "VERIFY_OTP",
+                    email = model.Email
+                });
             }
 
             if (result.Status == -3)
             {
-                ViewBag.Error = "Invalid password";
-                return View(model);
-                //return Unauthorized(new { message = "Invalid password" });
+                return Unauthorized(new { message = "Invalid password" });
             }
-            TempData["message"] = "Successful Login";
-            //HttpContext.Session.SetInt32("CareTakerID", result.CareTakerID);
-            //HttpContext.Session.SetString("CareTakerName", result.FirstName);
+
+            // ❌ MVC temp data not used
+            // TempData["message"] = "Successful Login";
+
+            // ❌ Session not used in API
+            // HttpContext.Session.SetInt32("CareTakerID", result.CareTakerID);
+            // HttpContext.Session.SetString("CareTakerName", result.FirstName);
 
             var token = _jwtService.GenerateToken(result.CareTakerID, model.Email);
+
+            // ✅ Optional: store JWT in HttpOnly cookie (if using browser-based frontend)
             Response.Cookies.Append("access_token", token, new CookieOptions
             {
                 HttpOnly = true,
-                Secure = false,
+                Secure = false, // ⚠ set true in production (HTTPS)
                 SameSite = SameSiteMode.Strict,
                 Expires = DateTimeOffset.UtcNow.AddMinutes(60)
             });
 
-            return RedirectToAction("Index", "CaretakerHome");
-            //return RedirectToAction("Dashboard");
+            // ❌ No redirect in API
+            // return RedirectToAction("Index", "CaretakerHome");
+
+            return Ok(new
+            {
+                message = "Login successful",
+                token = token,
+                caretakerId = result.CareTakerID,
+                firstName = result.FirstName
+            });
         }
-            //public IActionResult Dashboard()
-            //{
-            //return View();
-            //}
-        //return Ok(new
-        //{
-        //    message = "Login successful",
-        //   caretakerId = result.CareTakerID,
-        //    firstName = result.FirstName
-        //});
+
+        // ❌ MVC dashboard not used
+        // public IActionResult Dashboard()
+        // {
+        //     return View();
+        // }
     }
 }

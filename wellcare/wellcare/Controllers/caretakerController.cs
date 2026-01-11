@@ -1,45 +1,65 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Data.SqlClient;
+// using System.Data.SqlClient; // ❌ Not used in this controller
 using System.Security.Claims;
 using wellcare.Models;
 
 namespace wellcare.Controllers
 {
-    public class caretakerController : Controller
+    [ApiController]
+    [Route("api/[controller]")]
+    public class CaretakerController : ControllerBase
     {
         private readonly caretakerTable _table;
 
-            public caretakerController(caretakerTable table)
+        public CaretakerController(caretakerTable table)
         {
             _table = table;
         }
-        public IActionResult Index()
-        {
-            return View();
-        }
-        [HttpGet]
-        public IActionResult careProfile()
+
+        // ❌ MVC View not used in API
+        // public IActionResult Index()
+        // {
+        //     return View();
+        // }
+
+        // ================= GET PROFILE =================
+
+        [HttpGet("profile")]
+        public IActionResult GetCareProfile()
         {
             var caretakerIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             if (caretakerIdClaim == null)
-                return RedirectToAction("Login", "caretakerLogin");
+                return Unauthorized("Caretaker not logged in.");
 
-            int caretakerId = int.Parse(caretakerIdClaim);
+            if (!int.TryParse(caretakerIdClaim, out int caretakerId))
+                return BadRequest("Invalid caretaker ID.");
 
             var profile = _table.caretakerProfile(caretakerId);
 
             if (profile == null)
-                return Unauthorized();
+                return NotFound("Profile not found.");
 
-            return View(profile);
+            return Ok(profile);
         }
-        [HttpPost]
-        public IActionResult careProfile(string Bio, IFormFile Photo)
-        {
-            int caretakerId = int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier));
 
-            string photoPath = null;
+        // ================= UPDATE PROFILE =================
+
+        [HttpPost("profile")]
+        public IActionResult UpdateCareProfile(
+            [FromForm] string Bio,
+            [FromForm] IFormFile? Photo
+        )
+        {
+            var caretakerIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            if (caretakerIdClaim == null)
+                return Unauthorized("Caretaker not logged in.");
+
+            if (!int.TryParse(caretakerIdClaim, out int caretakerId))
+                return BadRequest("Invalid caretaker ID.");
+
+            string? photoPath = null;
 
             if (Photo != null && Photo.Length > 0)
             {
@@ -62,8 +82,7 @@ namespace wellcare.Controllers
 
             _table.UpdateCaretakerProfile(caretakerId, Bio, photoPath);
 
-            return RedirectToAction("careProfile");
+            return Ok(new { message = "Profile updated successfully." });
         }
-
     }
 }

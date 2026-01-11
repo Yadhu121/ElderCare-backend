@@ -5,8 +5,10 @@ using wellcare.Models;
 
 namespace wellcare.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     [Authorize]
-    public class ElderController : Controller
+    public class ElderController : ControllerBase
     {
         private readonly elderTable _elderRepo;
         private readonly CaretakerElderService _linkService;
@@ -14,47 +16,43 @@ namespace wellcare.Controllers
 
         public ElderController(
             elderTable elderRepo,
-            CaretakerElderService linkService, elderProfile elderProfile)
+            CaretakerElderService linkService,
+            elderProfile elderProfile)
         {
             _elderRepo = elderRepo;
             _linkService = linkService;
             _elderProfile = elderProfile;
         }
 
-        [HttpGet]
-        public IActionResult Add()
-        {
-            return View();
-        }
+        // ❌ MVC Add page not used in API
+        // [HttpGet]
+        // public IActionResult Add()
+        // {
+        //     return View();
+        // }
 
-        [HttpPost]
-        public IActionResult Add(AssignElderModel model)
+        // ================= ASSIGN ELDER =================
+
+        [HttpPost("assign")]
+        public IActionResult AssignElder([FromBody] AssignElderModel model)
         {
             if (!ModelState.IsValid)
-                return View(model);
+                return BadRequest(ModelState);
 
-            //int? caretakerId = HttpContext.Session.GetInt32("CareTakerID");
+            // ❌ Session-based auth not used
+            // int? caretakerId = HttpContext.Session.GetInt32("CareTakerID");
 
             var caretakerIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (caretakerIdClaim == null)
-            {
-                return RedirectToAction("Login", "caretakerLogin");
-            }
+                return Unauthorized("Caretaker not logged in.");
 
-            int caretakerId = int.Parse(caretakerIdClaim);
-
-
-            //if (caretakerId == null)
-            //{
-            //    return RedirectToAction("Login", "caretakerLogin");
-            //}
-
+            if (!int.TryParse(caretakerIdClaim, out int caretakerId))
+                return BadRequest("Invalid caretaker ID.");
 
             var elder = _elderRepo.GetElderByEmail(model.ElderEmail);
             if (elder == null)
             {
-                ViewBag.Error = "Elder not found";
-                return View(model);
+                return NotFound(new { message = "Elder not found" });
             }
 
             bool passwordOk = BCrypt.Net.BCrypt.Verify(
@@ -64,51 +62,52 @@ namespace wellcare.Controllers
 
             if (!passwordOk)
             {
-                ViewBag.Error = "Invalid elder password";
-                return View(model);
+                return Unauthorized(new { message = "Invalid elder password" });
             }
 
-            //int status = _linkService.AssignElder(caretakerId.Value, model.ElderEmail);
+            // ❌ Nullable version not needed
+            // int status = _linkService.AssignElder(caretakerId.Value, model.ElderEmail);
+
             int status = _linkService.AssignElder(caretakerId, model.ElderEmail);
 
             if (status == -2)
             {
-                ViewBag.Error = "Elder already linked to a caretaker";
-                return View(model);
+                return Conflict(new { message = "Elder already linked to a caretaker" });
             }
 
-            TempData["Success"] = "Elder added successfully";
-            return RedirectToAction("Index", "CaretakerHome");
+            // ❌ MVC TempData + redirect not used
+            // TempData["Success"] = "Elder added successfully";
+            // return RedirectToAction("Index", "CaretakerHome");
+
+            return Ok(new { message = "Elder assigned successfully" });
         }
-        
-        [HttpGet]
-        public IActionResult Profile(int id)
+
+        // ================= GET ELDER PROFILE =================
+
+        [HttpGet("profile/{elderId:int}")]
+        public IActionResult GetElderProfile(int elderId)
         {
-            //int? caretakerId = HttpContext.Session.GetInt32("CareTakerID");
+            // ❌ Session-based auth not used
+            // int? caretakerId = HttpContext.Session.GetInt32("CareTakerID");
 
             var caretakerIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (caretakerIdClaim == null)
-            {
-                return RedirectToAction("Login", "caretakerLogin");
-            }
+                return Unauthorized("Caretaker not logged in.");
 
-            int caretakerId = int.Parse(caretakerIdClaim);
+            if (!int.TryParse(caretakerIdClaim, out int caretakerId))
+                return BadRequest("Invalid caretaker ID.");
 
+            // ❌ Nullable version not needed
+            // var elder = _elderProfile.GetElderProfile(caretakerId.Value, elderId);
 
-            //if (caretakerId == null)
-            //{
-            //    return RedirectToAction("Login", "caretakerLogin");
-            //}
-
-            //var elder = _elderProfile.GetElderProfile(caretakerId.Value, id);
-            var elder = _elderProfile.GetElderProfile(caretakerId, id);
+            var elder = _elderProfile.GetElderProfile(caretakerId, elderId);
 
             if (elder == null)
             {
-                return Unauthorized();
+                return Unauthorized(new { message = "Access denied or elder not found" });
             }
 
-            return View(elder);
+            return Ok(elder);
         }
     }
 }

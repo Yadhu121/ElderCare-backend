@@ -4,7 +4,9 @@ using wellcare.Models;
 
 namespace wellcare.Controllers
 {
-    public class HomeController : Controller
+    [ApiController]
+    [Route("api/[controller]")]
+    public class HomeController : ControllerBase
     {
         private readonly ILogger<HomeController> _logger;
 
@@ -13,20 +15,46 @@ namespace wellcare.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        // ❌ MVC Home page not used in API
+        // public IActionResult Index()
+        // {
+        //     return View();
+        // }
+
+        // ================= HEALTH CHECK =================
+
+        [HttpGet("status")]
+        public IActionResult Status()
         {
-            return View();
+            return Ok(new
+            {
+                status = "API is running",
+                time = DateTime.UtcNow
+            });
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+        // ❌ MVC privacy page not used in API
+        // public IActionResult Privacy()
+        // {
+        //     return View();
+        // }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        // ================= ERROR TEST ENDPOINT =================
+
+        [HttpGet("error")]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var requestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier;
+
+            _logger.LogError("Error endpoint hit. RequestId: {RequestId}", requestId);
+
+            return Problem(
+                detail: "An error occurred while processing your request.",
+                instance: requestId
+            );
         }
+
+        // ❌ MVC ResponseCache attribute not needed in API
+        // [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     }
 }

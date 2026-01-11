@@ -5,8 +5,10 @@ using wellcare.Models;
 
 namespace wellcare.Controllers
 {
+    [ApiController]
+    [Route("api/[controller]")]
     [Authorize]
-    public class CaretakerHomeController : Controller
+    public class CaretakerHomeController : ControllerBase
     {
         private readonly CaretakerElderService _linkService;
 
@@ -14,34 +16,50 @@ namespace wellcare.Controllers
         {
             _linkService = linkService;
         }
-        public IActionResult Index()
+
+        // ❌ MVC View endpoint not used in API
+        // public IActionResult Index()
+        // {
+        //     return View();
+        // }
+
+        // ================= GET ASSIGNED ELDERS =================
+
+        [HttpGet("elders")]
+        public IActionResult GetAssignedElders()
         {
-            //int? caretakerId = HttpContext.Session.GetInt32("CareTakerID");
+            // ❌ Session-based auth not used
+            // int? caretakerId = HttpContext.Session.GetInt32("CareTakerID");
+
             var caretakerIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
             if (caretakerIdClaim == null)
-            {
-                return RedirectToAction("Login", "caretakerLogin");
-            }
+                return Unauthorized("Caretaker not logged in.");
 
-            int caretakerId = int.Parse(caretakerIdClaim);
+            if (!int.TryParse(caretakerIdClaim, out int caretakerId))
+                return BadRequest("Invalid caretaker ID.");
 
+            // ❌ Old nullable version not needed
+            // var elders = _linkService.GetAssignedElders(caretakerId.Value);
 
-            //if (caretakerId == null)
-            //return RedirectToAction("Login", "caretakerLogin");
-
-            //var elders = _linkService.GetAssignedElders(caretakerId.Value);
             var elders = _linkService.GetAssignedElders(caretakerId);
 
-            return View(elders);
+            return Ok(elders);
         }
 
-        public IActionResult AddElder()
-        {
-            return RedirectToAction("Add", "Elder");
-        }
-        public IActionResult caretakerProfile()
-        {
-            return RedirectToAction("careProfile", "caretaker");
-        }
+        // ================= API NAVIGATION HELPERS (OPTIONAL) =================
+        // In API we do NOT redirect to pages. Frontend decides navigation.
+
+        // ❌ Redirect not valid in API
+        // public IActionResult AddElder()
+        // {
+        //     return RedirectToAction("Add", "Elder");
+        // }
+
+        // ❌ Redirect not valid in API
+        // public IActionResult caretakerProfile()
+        // {
+        //     return RedirectToAction("careProfile", "caretaker");
+        // }
     }
 }
