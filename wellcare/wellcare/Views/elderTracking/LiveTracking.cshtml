@@ -1,0 +1,61 @@
+@{
+    ViewData["Title"] = "Live Elder Tracking";
+    Layout = "_Layout";
+}
+
+<h3 class="mb-3">Live Elder Location Tracking</h3>
+
+<div id="map"></div>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin="" />
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+
+<style>
+    #map {
+        height: 600px;
+        width: 100%;
+        border-radius: 10px;
+    }
+</style>
+
+<script>
+    var map = L.map('map').setView([10.0, 76.0], 12);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19
+    }).addTo(map);
+
+    let markers = {};
+    let routes = {};
+
+    async function loadLocations() {
+
+        const res = await fetch('/api/live-locations');
+        if (!res.ok) return;
+
+        const data = await res.json();
+
+        data.forEach(e => {
+
+            if (!markers[e.elderId]) {
+
+                markers[e.elderId] = L.marker([e.lat, e.lon])
+                    .addTo(map)
+                    .bindPopup("Elder ID: " + e.elderId);
+
+                routes[e.elderId] = L.polyline([], { color: 'blue' }).addTo(map);
+            }
+
+            markers[e.elderId].setLatLng([e.lat, e.lon]);
+            routes[e.elderId].addLatLng([e.lat, e.lon]);
+        });
+    }
+
+    setInterval(loadLocations, 3000);
+</script>
