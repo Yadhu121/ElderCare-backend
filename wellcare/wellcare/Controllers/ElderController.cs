@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using wellcare.Models;
+using wellcare.Services;
 
 namespace wellcare.Controllers
 {
@@ -11,17 +12,20 @@ namespace wellcare.Controllers
         private readonly elderTable _elderRepo;
         private readonly CaretakerElderService _linkService;
         private readonly elderProfile _elderProfile;
+        private readonly JwtService _jwtService;
         private readonly IConfiguration _config;
 
         public ElderController(
             elderTable elderRepo,
             CaretakerElderService linkService,
             elderProfile elderProfile,
+            JwtService jwtService,
             IConfiguration config)
         {
             _elderRepo = elderRepo;
             _linkService = linkService;
             _elderProfile = elderProfile;
+            _jwtService = jwtService;
             _config = config;
         }
 
@@ -103,7 +107,9 @@ namespace wellcare.Controllers
                 return Unauthorized();
             }
 
-            // 🔥 ADD THIS LINE
+            var token = _jwtService.GenerateToken(caretakerId, User.FindFirstValue(ClaimTypes.Email) ?? "");
+
+            ViewBag.MicroJwt = token;
             ViewBag.LocationWsBase = _config["LocationService:WsBase"];
 
             return View(elder);

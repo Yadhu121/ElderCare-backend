@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("wellcare")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c991b5970ebeedf0ad27798ec4e49c2ceda5fde9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ab801a563b75d01d2823a476191c29a376d3670")]
 [assembly: System.Reflection.AssemblyProductAttribute("wellcare")]
 [assembly: System.Reflection.AssemblyTitleAttribute("wellcare")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

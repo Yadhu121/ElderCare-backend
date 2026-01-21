@@ -356,12 +356,13 @@
             if (ws) ws.close();
 
             // JWT from ElderCare login (adjust if stored elsewhere)
-            const token = localStorage.getItem("jwt");
+            const token = "@ViewBag.MicroJwt";
 
-            if (!token) {
-                log("JWT not found. Please login again.");
-                return;
+            if (!token || token.length < 10) {
+                log("JWT not provided by server");
+            return;
             }
+
 
             const base = "@ViewBag.LocationWsBase";
             const wsUrl = `${base}?mode=watch&watchUserId=${elderId}&token=${token}`;
