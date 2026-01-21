@@ -11,14 +11,18 @@ namespace wellcare.Controllers
         private readonly elderTable _elderRepo;
         private readonly CaretakerElderService _linkService;
         private readonly elderProfile _elderProfile;
+        private readonly IConfiguration _config;
 
         public ElderController(
             elderTable elderRepo,
-            CaretakerElderService linkService, elderProfile elderProfile)
+            CaretakerElderService linkService,
+            elderProfile elderProfile,
+            IConfiguration config)
         {
             _elderRepo = elderRepo;
             _linkService = linkService;
             _elderProfile = elderProfile;
+            _config = config;
         }
 
         [HttpGet]
@@ -80,12 +84,10 @@ namespace wellcare.Controllers
             TempData["Success"] = "Elder added successfully";
             return RedirectToAction("Index", "CaretakerHome");
         }
-        
+
         [HttpGet]
         public IActionResult Profile(int id)
         {
-            //int? caretakerId = HttpContext.Session.GetInt32("CareTakerID");
-
             var caretakerIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (caretakerIdClaim == null)
             {
@@ -94,13 +96,6 @@ namespace wellcare.Controllers
 
             int caretakerId = int.Parse(caretakerIdClaim);
 
-
-            //if (caretakerId == null)
-            //{
-            //    return RedirectToAction("Login", "caretakerLogin");
-            //}
-
-            //var elder = _elderProfile.GetElderProfile(caretakerId.Value, id);
             var elder = _elderProfile.GetElderProfile(caretakerId, id);
 
             if (elder == null)
@@ -108,7 +103,41 @@ namespace wellcare.Controllers
                 return Unauthorized();
             }
 
+            // 🔥 ADD THIS LINE
+            ViewBag.LocationWsBase = _config["LocationService:WsBase"];
+
             return View(elder);
         }
+
+        
+        //[HttpGet]
+        //public IActionResult Profile(int id)
+        //{
+        //   //int? caretakerId = HttpContext.Session.GetInt32("CareTakerID");
+        //
+        //    var caretakerIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        //    if (caretakerIdClaim == null)
+        //    {
+        //        return RedirectToAction("Login", "caretakerLogin");
+        //    }
+
+        //    int caretakerId = int.Parse(caretakerIdClaim);
+
+
+        //    //if (caretakerId == null)
+        //    //{
+        //    //    return RedirectToAction("Login", "caretakerLogin");
+        //    //}
+
+        //    //var elder = _elderProfile.GetElderProfile(caretakerId.Value, id);
+        //    var elder = _elderProfile.GetElderProfile(caretakerId, id);
+
+        //    if (elder == null)
+        //    {
+        //        return Unauthorized();
+        //    }
+
+        //    return View(elder);
+        //}
     }
 }

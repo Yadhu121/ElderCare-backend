@@ -32,7 +32,7 @@
 </a>
 *@
 
-@model wellcare.Models.ElderProfileViewModel
+@*@model wellcare.Models.ElderProfileViewModel
 
 <!DOCTYPE html>
 <html lang="en">
@@ -170,6 +170,226 @@
             ">View Live Location</a>
         </div>
     </div>
+
+</body>
+</html>
+*@
+
+@model wellcare.Models.ElderProfileViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Elder Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #f5f7fa;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header h2 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: #4f46e5;
+            font-size: 14px;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Main content */
+        .content {
+            padding: 32px 24px;
+            max-width: 900px;
+        }
+
+        .profile-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 16px;
+            background: #ffffff;
+            padding: 24px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .label {
+            color: #555;
+            font-size: 14px;
+        }
+
+        .value {
+            font-size: 15px;
+            color: #111;
+            font-weight: 500;
+        }
+
+        #liveLog {
+            margin-top: 16px;
+            background: #111;
+            color: #0f0;
+            padding: 10px;
+            font-family: monospace;
+            font-size: 13px;
+            max-height: 200px;
+            overflow: auto;
+            border-radius: 8px;
+        }
+
+        @@media (max-width: 600px) {
+            .content {
+                padding: 20px 16px;
+            }
+
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <h2>Elder Profile</h2>
+
+        <a asp-controller="CaretakerHome" asp-action="Index" class="back-link">
+            ← Back to Caretaker Home
+        </a>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+
+        <div class="profile-title">
+            @Model.ElderName
+        </div>
+
+        <div class="profile-grid">
+            <div class="label">Email</div>
+            <div class="value">@Model.Email</div>
+
+            <div class="label">Age</div>
+            <div class="value">@Model.Age</div>
+
+            <div class="label">Gender</div>
+            <div class="value">@Model.Gender</div>
+
+            <div class="label">Linked At</div>
+            <div class="value">@Model.LinkedAt</div>
+        </div>
+
+        <!-- Existing live tracking page -->
+        <div style="margin-top:24px;">
+            <a asp-controller="elderTracking"
+               asp-action="LiveTracking"
+               asp-route-elderId="@Model.ElderId"
+               style="
+                display:inline-block;
+                background:#4f46e5;
+                color:white;
+                padding:10px 18px;
+                border-radius:8px;
+                text-decoration:none;
+                font-size:14px;
+               ">
+                View Live Location
+            </a>
+        </div>
+
+        <!-- MICROservice test button -->
+        <div style="margin-top:16px;">
+            <button onclick="startWatch(@Model.ElderId)"
+                    style="
+                    background:#059669;
+                    color:white;
+                    padding:10px 18px;
+                    border-radius:8px;
+                    border:none;
+                    cursor:pointer;
+                    font-size:14px;">
+                Watch Location (Test - Microservice)
+            </button>
+        </div>
+
+        <!-- Live log -->
+        <div id="liveLog"></div>
+
+    </div>
+
+    <script>
+        let ws = null;
+
+        function startWatch(elderId) {
+
+            if (ws) ws.close();
+
+            // JWT from ElderCare login (adjust if stored elsewhere)
+            const token = localStorage.getItem("jwt");
+
+            if (!token) {
+                log("JWT not found. Please login again.");
+                return;
+            }
+
+            const base = "@ViewBag.LocationWsBase";
+            const wsUrl = `${base}?mode=watch&watchUserId=${elderId}&token=${token}`;
+
+
+            log("Connecting to microservice...");
+            console.log("WS:", wsUrl);
+
+            ws = new WebSocket(wsUrl);
+
+            ws.onopen = () => log("Connected to microservice");
+
+            ws.onmessage = e => log("GPS → " + e.data);
+
+            ws.onerror = e => {
+                console.error(e);
+                log("WebSocket error");
+            };
+
+            ws.onclose = () => log("Connection closed");
+        }
+
+        function log(msg) {
+            const box = document.getElementById("liveLog");
+            box.innerHTML += msg + "<br>";
+            box.scrollTop = box.scrollHeight;
+        }
+    </script>
 
 </body>
 </html>
