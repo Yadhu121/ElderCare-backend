@@ -1,0 +1,87 @@
+﻿@{
+    ViewData["Title"] = "Live Elder Tracking";
+    Layout = "_Layout";
+}
+
+<h3 class="mb-3">Live Elder Location Tracking</h3>
+
+<div id="statusBox" style="margin-bottom:10px;padding:8px;border-radius:6px;background:#f3f4f6;">
+    Status: Waiting to connect...
+</div>
+
+<div id="map"></div>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<style>
+    #map {
+        height: 600px;
+        width: 100%;
+        border-radius: 10px;
+    }
+</style>
+
+<script>
+    const elderId = @ViewBag.ElderId;
+
+    var map = L.map('map').setView([10.0, 76.0], 12);
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19
+    }).addTo(map);
+
+    let marker = null;
+    let route = L.polyline([], { color: 'blue' }).addTo(map);
+
+    function setStatus(msg, color) {
+        const box = document.getElementById("statusBox");
+        box.innerHTML = "Status: " + msg;
+        box.style.background = color;
+    }
+
+    async function loadLocation() {
+
+        try {
+
+            const res = await fetch(`/api/live/${elderId}`);
+
+            if (res.status === 404) {
+                setStatus("No location data yet", "#dbeafe");
+                return;
+            }
+
+            if (res.status === 403) {
+                setStatus("Not authorized", "#fee2e2");
+                return;
+            }
+
+            if (!res.ok) {
+                setStatus("Server error", "#fee2e2");
+                return;
+            }
+
+            const data = await res.json();
+            const lat = data.lat;
+            const lng = data.lng;
+
+            if (!marker) {
+                marker = L.marker([lat, lng]).addTo(map);
+                map.setView([lat, lng], 17);
+                setStatus("Connected ✓", "#dcfce7");
+            } else {
+                setStatus("Receiving live updates...", "#dcfce7");
+            }
+
+            marker.setLatLng([lat, lng]);
+            route.addLatLng([lat, lng]);
+
+        } catch {
+            setStatus("Connection failed", "#fee2e2");
+        }
+    }
+
+    setInterval(loadLocation, 3000);
+</script>

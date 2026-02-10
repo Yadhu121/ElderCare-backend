@@ -1,0 +1,185 @@
+﻿@model wellcare.Models.ElderProfileViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Elder Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <style>
+        body {
+            margin: 0;
+            background: #f5f7fa;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        .header {
+            background: #ffffff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .content {
+            padding: 24px;
+            max-width: 1000px;
+        }
+
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 16px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #e5e7eb;
+        }
+
+        button {
+            margin-top: 20px;
+            background: #059669;
+            color: white;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #statusBox {
+            margin-top: 12px;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            background: #f3f4f6;
+            border: 1px solid #ddd;
+        }
+
+        #map {
+            margin-top: 20px;
+            height: 400px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h2>Elder Profile</h2>
+        <a asp-controller="CaretakerHome" asp-action="Index">
+            ← Back
+        </a>
+    </div>
+
+    <div class="content">
+
+        <h3>@Model.ElderName</h3>
+
+        <div class="profile-grid">
+            <div>Email</div><div>@Model.Email</div>
+            <div>Age</div><div>@Model.Age</div>
+            <div>Gender</div><div>@Model.Gender</div>
+            <div>Linked At</div><div>@Model.LinkedAt</div>
+        </div>
+
+        <button onclick="startWatching()">
+            ▶ Watch Live Location
+        </button>
+
+        <div id="statusBox">
+            Status: Not started
+        </div>
+
+        <div id="map"></div>
+
+    </div>
+
+    <script>
+        let map = null;
+        let marker = null;
+        let polyline = null;
+        let path = [];
+        let intervalId = null;
+
+        // Update status box
+        function setStatus(message, color) {
+            const box = document.getElementById("statusBox");
+            box.innerHTML = "Status: " + message;
+            box.style.background = color;
+        }
+
+        // Start polling
+        function startWatching() {
+
+            if (intervalId) return;
+
+            setStatus("Connecting to server...", "#fef3c7");
+
+            intervalId = setInterval(async () => {
+
+                try {
+
+                    const res = await fetch(`/api/live/@Model.ElderId`);
+
+                    if (res.status === 404) {
+                        setStatus("No location data yet", "#dbeafe");
+                        return;
+                    }
+
+                    if (res.status === 403) {
+                        setStatus("Not authorized for this elder", "#fee2e2");
+                        return;
+                    }
+
+                    if (!res.ok) {
+                        setStatus("Server error", "#fee2e2");
+                        return;
+                    }
+
+                    const data = await res.json();
+                    const lat = data.lat;
+                    const lng = data.lng;
+
+                    if (!map) {
+                        initMap(lat, lng);
+                        setStatus("Connected ✓", "#dcfce7");
+                    } else {
+                        setStatus("Receiving live updates...", "#dcfce7");
+                    }
+
+                    marker.setLatLng([lat, lng]);
+                    map.panTo([lat, lng]);
+
+                    path.push([lat, lng]);
+                    polyline.setLatLngs(path);
+
+                } catch (err) {
+                    setStatus("Connection failed", "#fee2e2");
+                }
+
+            }, 3000);
+        }
+
+        // Initialize map
+        function initMap(lat, lng) {
+
+            map = L.map("map").setView([lat, lng], 17);
+
+            L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                maxZoom: 19
+            }).addTo(map);
+
+            marker = L.marker([lat, lng]).addTo(map);
+            polyline = L.polyline([], { color: "blue" }).addTo(map);
+        }
+    </script>
+
+</body>
+</html>
