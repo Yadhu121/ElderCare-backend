@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Yadhu\\Desktop\\New folder (2)\\Wellcare\\Wellcare\\Wellcare.csproj": {}
+    "C:\\Users\\Yadhu\\Desktop\\Jr projects\\ElderCare\\ElderCare-backend\\Wellcare\\Wellcare.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Yadhu\\Desktop\\New folder (2)\\Wellcare\\Wellcare\\Wellcare.csproj": {
+    "C:\\Users\\Yadhu\\Desktop\\Jr projects\\ElderCare\\ElderCare-backend\\Wellcare\\Wellcare.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Yadhu\\Desktop\\New folder (2)\\Wellcare\\Wellcare\\Wellcare.csproj",
+        "projectUniqueName": "C:\\Users\\Yadhu\\Desktop\\Jr projects\\ElderCare\\ElderCare-backend\\Wellcare\\Wellcare.csproj",
         "projectName": "Wellcare",
-        "projectPath": "C:\\Users\\Yadhu\\Desktop\\New folder (2)\\Wellcare\\Wellcare\\Wellcare.csproj",
+        "projectPath": "C:\\Users\\Yadhu\\Desktop\\Jr projects\\ElderCare\\ElderCare-backend\\Wellcare\\Wellcare.csproj",
         "packagesPath": "C:\\Users\\Yadhu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Yadhu\\Desktop\\New folder (2)\\Wellcare\\Wellcare\\obj\\",
+        "outputPath": "C:\\Users\\Yadhu\\Desktop\\Jr projects\\ElderCare\\ElderCare-backend\\Wellcare\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
