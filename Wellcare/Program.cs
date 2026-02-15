@@ -127,6 +127,6 @@ app.MapGet("/api/live-locations", () =>
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=caretakerLogin}/{action=Login}/{id?}");
+    pattern: "{controller=landing}/{action=landing}/{id?}");
 
 app.Run();

@@ -1,105 +1,290 @@
 ﻿@model wellcare.Models.ElderProfileViewModel
 
+@{
+    Layout = null;
+    ViewData["Title"] = "Elder Profile";
+}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Elder Profile</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@@phosphor-icons/web"></script>
 
     <!-- Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <style>
-        body {
-            margin: 0;
-            background: #f5f7fa;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        :root {
+            --primary: #2563EB;
+            --primary-dark: #1E40AF;
+            --secondary: #10B981;
+            --danger: #EF4444;
+            --warning: #F59E0B;
+            --bg-color: #F8FAFC;
+            --card-bg: #FFFFFF;
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --border: #E2E8F0;
+            --radius-lg: 24px;
+            --radius-pill: 50px;
+            --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
         }
 
-        .header {
-            background: #ffffff;
-            border-bottom: 1px solid #e5e7eb;
-            padding: 16px 24px;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .back-link {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+
+            .back-link:hover {
+                color: var(--primary);
+            }
+
+        /* Main Content */
+        main {
+            flex: 1;
+            padding: 2rem;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border);
+        }
+
+        .profile-header {
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            align-items: flex-start;
+            margin-bottom: 2rem;
         }
 
-        .content {
-            padding: 24px;
-            max-width: 1000px;
+        .profile-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--text-main);
+            margin-bottom: 0.25rem;
         }
 
-        .profile-grid {
+        .profile-subtitle {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .info-grid {
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 16px;
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 10px;
-            border: 1px solid #e5e7eb;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
 
-        button {
-            margin-top: 20px;
-            background: #059669;
-            color: white;
-            padding: 10px 18px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
+        .info-item label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-muted);
+            margin-bottom: 0.25rem;
+            font-weight: 600;
         }
+
+        .info-item span {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* Interactive Elements */
+        .controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-primary {
+            padding: 0.75rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius-pill);
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+        }
+
+            .btn-primary:hover {
+                background: var(--primary-dark);
+                transform: translateY(-2px);
+                box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+            }
 
         #statusBox {
-            margin-top: 12px;
-            padding: 10px;
-            border-radius: 8px;
-            font-size: 14px;
-            background: #f3f4f6;
-            border: 1px solid #ddd;
+            padding: 0.75rem 1.25rem;
+            border-radius: var(--radius-pill);
+            font-size: 0.875rem;
+            font-weight: 500;
+            background: #F3F4F6;
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
         }
 
+        /* Map */
         #map {
-            margin-top: 20px;
             height: 400px;
-            border-radius: 10px;
+            width: 100%;
+            border-radius: 16px;
+            z-index: 1;
+            margin-top: 1rem;
+        }
+
+        /* Responsive */
+        @@media (max-width: 600px) {
+            header, main {
+                padding: 1rem;
+            }
+
+            .profile-header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            #map {
+                height: 300px;
+            }
         }
     </style>
 </head>
-
 <body>
 
-    <div class="header">
-        <h2>Elder Profile</h2>
-        <a asp-controller="CaretakerHome" asp-action="Index">
-            ← Back
+    <header>
+        <a href="#" class="logo">
+            <i class="ph-fill ph-first-aid-kit"></i> Wellnest
         </a>
-    </div>
+        <a asp-controller="CaretakerHome" asp-action="Index" class="back-link">
+            <i class="ph-bold ph-arrow-left"></i> Back to Dashboard
+        </a>
+    </header>
 
-    <div class="content">
+    <main>
+        <div class="card profile-container">
+            <div class="profile-header">
+                <div class="profile-title">
+                    <h2>@Model.ElderName</h2>
+                    <p class="profile-subtitle">Elder Profile Information</p>
+                </div>
+                <!-- Optional: Add Edit Button here -->
+            </div>
 
-        <h3>@Model.ElderName</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <label>Email Address</label>
+                    <span>@Model.Email</span>
+                </div>
+                <div class="info-item">
+                    <label>Age</label>
+                    <span>@Model.Age Years</span>
+                </div>
+                <div class="info-item">
+                    <label>Gender</label>
+                    <span>@Model.Gender</span>
+                </div>
+                <div class="info-item">
+                    <label>Linked Since</label>
+                    <span>@Model.LinkedAt</span>
+                </div>
+            </div>
 
-        <div class="profile-grid">
-            <div>Email</div><div>@Model.Email</div>
-            <div>Age</div><div>@Model.Age</div>
-            <div>Gender</div><div>@Model.Gender</div>
-            <div>Linked At</div><div>@Model.LinkedAt</div>
+            <hr style="border: 0; border-top: 1px solid var(--border); margin: 0 0 1.5rem 0;">
+
+            <div class="controls">
+                <button onclick="startWatching()" class="btn-primary">
+                    <i class="ph-fill ph-broadcast"></i> Watch Live Location
+                </button>
+
+                <div id="statusBox">
+                    <i class="ph-bold ph-circle"></i> Status: Not started
+                </div>
+            </div>
+
+            <div id="map"></div>
         </div>
-
-        <button onclick="startWatching()">
-            ▶ Watch Live Location
-        </button>
-
-        <div id="statusBox">
-            Status: Not started
-        </div>
-
-        <div id="map"></div>
-
-    </div>
+    </main>
 
     <script>
         let map = null;
@@ -108,38 +293,66 @@
         let path = [];
         let intervalId = null;
 
-        // Update status box
-        function setStatus(message, color) {
-            const box = document.getElementById("statusBox");
-            box.innerHTML = "Status: " + message;
-            box.style.background = color;
+        // Status Helper
+        const statusBox = document.getElementById("statusBox");
+
+        function setStatusUI(message, type) {
+            statusBox.innerHTML = message; // Keep icon separate if possible, but innerHTML allows flexible content
+
+            // Basic reset
+            statusBox.style.background = "#F3F4F6";
+            statusBox.style.color = "#64748B"; // text-muted
+            statusBox.style.borderColor = "#E2E8F0";
+
+            let iconClass = "ph-circle";
+
+            if (type === 'success') {
+                statusBox.style.background = "#DCFCE7";
+                statusBox.style.color = "#166534";
+                statusBox.style.borderColor = "#86EFAC";
+                iconClass = "ph-check-circle";
+            } else if (type === 'error') {
+                statusBox.style.background = "#FEE2E2";
+                statusBox.style.color = "#991B1B";
+                statusBox.style.borderColor = "#FCA5A5";
+                iconClass = "ph-warning-circle";
+            } else if (type === 'warning') { // yellow/amber for connecting
+                statusBox.style.background = "#FEF3C7";
+                statusBox.style.color = "#92400E";
+                statusBox.style.borderColor = "#FCD34D";
+                iconClass = "ph-spinner-gap ph-spin"; // Animated spinner
+            } else if (type === 'info') {
+                statusBox.style.background = "#DBEAFE";
+                statusBox.style.color = "#1E40AF";
+                statusBox.style.borderColor = "#93C5FD";
+                iconClass = "ph-info";
+            }
+
+            statusBox.innerHTML = `<i class="ph-bold ${iconClass}"></i> Status: ${message}`;
         }
 
         // Start polling
         function startWatching() {
-
             if (intervalId) return;
 
-            setStatus("Connecting to server...", "#fef3c7");
+            setStatusUI("Connecting to server...", "warning");
 
             intervalId = setInterval(async () => {
-
                 try {
-
                     const res = await fetch(`/api/live/@Model.ElderId`);
 
                     if (res.status === 404) {
-                        setStatus("No location data yet", "#dbeafe");
+                        setStatusUI("No location data yet", "info");
                         return;
                     }
 
                     if (res.status === 403) {
-                        setStatus("Not authorized for this elder", "#fee2e2");
+                        setStatusUI("Not authorized for this elder", "error");
                         return;
                     }
 
                     if (!res.ok) {
-                        setStatus("Server error", "#fee2e2");
+                        setStatusUI("Server error", "error");
                         return;
                     }
 
@@ -149,9 +362,9 @@
 
                     if (!map) {
                         initMap(lat, lng);
-                        setStatus("Connected ✓", "#dcfce7");
+                        setStatusUI("Connected", "success");
                     } else {
-                        setStatus("Receiving live updates...", "#dcfce7");
+                        setStatusUI("Receiving live updates...", "success");
                     }
 
                     marker.setLatLng([lat, lng]);
@@ -161,25 +374,24 @@
                     polyline.setLatLngs(path);
 
                 } catch (err) {
-                    setStatus("Connection failed", "#fee2e2");
+                    console.error(err);
+                    setStatusUI("Connection failed", "error");
                 }
-
             }, 3000);
         }
 
         // Initialize map
         function initMap(lat, lng) {
-
             map = L.map("map").setView([lat, lng], 17);
 
             L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-                maxZoom: 19
+                maxZoom: 19,
+                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
             }).addTo(map);
 
             marker = L.marker([lat, lng]).addTo(map);
-            polyline = L.polyline([], { color: "blue" }).addTo(map);
+            polyline = L.polyline([], { color: "#2563EB", weight: 4 }).addTo(map); // Primary Blue route
         }
     </script>
-
 </body>
 </html>
