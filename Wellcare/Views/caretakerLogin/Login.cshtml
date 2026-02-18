@@ -14,9 +14,9 @@
     <script src="https://unpkg.com/@@phosphor-icons/web"></script>
     <style>
         :root {
-            --primary: #2563EB; /* Trustworthy Blue */
+            --primary: #2563EB;
             --primary-dark: #1E40AF;
-            --secondary: #10B981; /* Success/Health Teal */
+            --secondary: #10B981;
             --bg-color: #F8FAFC;
             --card-bg: rgba(255, 255, 255, 0.6);
             --text-main: #0F172A;
@@ -100,7 +100,7 @@
         }
 
         .title {
-            font-family: 'Playfair Display', serif; /* Changed font */
+            font-family: 'Playfair Display', serif;
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 2rem;
@@ -137,7 +137,6 @@
             pointer-events: none;
         }
 
-        /* Password Toggle Icon */
         .toggle-password {
             position: absolute;
             right: 1rem;
@@ -155,9 +154,9 @@
 
         .form-group input {
             width: 100%;
-            padding: 0.875rem 2.5rem; /* Space for both left and right icons */
+            padding: 0.875rem 2.5rem;
             border: 1px solid var(--border);
-            border-radius: var(--radius-pill); /* Pill shape inputs */
+            border-radius: var(--radius-pill);
             font-size: 1rem;
             font-family: inherit;
             transition: all 0.2s;
@@ -289,24 +288,23 @@
         <partial name="_ValidationScriptsPartial" />
     }
 
-    @if (TempData["message"] != null)
+    @*@if (TempData["message"] != null)
     {
         <script>
             alert('@TempData["message"]');
         </script>
-    }
+    }*@
 
     <script>
-        // Password Toggle Logic
+
         const togglePassword = document.getElementById('togglePassword');
         const passwordInput = document.getElementById('passwordInput');
 
         togglePassword.addEventListener('click', function () {
-            // Toggle the type attribute
+
             const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
             passwordInput.setAttribute('type', type);
 
-            // Toggle the eye icon
             if (this.classList.contains('ph-eye')) {
                 this.classList.remove('ph-eye');
                 this.classList.add('ph-eye-slash');
@@ -316,7 +314,6 @@
             }
         });
 
-        // Simplified Particle Background Script
         const canvas = document.getElementById('bg-canvas');
         const ctx = canvas.getContext('2d');
 
