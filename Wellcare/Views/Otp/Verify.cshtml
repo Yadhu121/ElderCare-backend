@@ -14,9 +14,9 @@
     <script src="https://unpkg.com/@@phosphor-icons/web"></script>
     <style>
         :root {
-            --primary: #2563EB; /* Trustworthy Blue */
+            --primary: #2563EB;
             --primary-dark: #1E40AF;
-            --secondary: #10B981; /* Success/Health Teal */
+            --secondary: #10B981;
             --danger: #EF4444;
             --bg-color: #F8FAFC;
             --card-bg: rgba(255, 255, 255, 0.6);
@@ -140,14 +140,14 @@
 
         .form-group input {
             width: 100%;
-            padding: 0.875rem 1rem 0.875rem 3rem; /* Space for icon */
+            padding: 0.875rem 1rem 0.875rem 3rem;
             border: 1px solid var(--border);
-            border-radius: var(--radius-pill); /* Pill shape inputs */
+            border-radius: var(--radius-pill);
             font-size: 1rem;
             font-family: inherit;
             transition: all 0.2s;
             background: rgba(255, 255, 255, 0.7);
-            letter-spacing: 0.1em; /* Spacing for OTP */
+            letter-spacing: 0.1em;
             font-weight: 600;
         }
 
@@ -267,7 +267,6 @@
                 text-decoration: underline;
             }
 
-        /* Hide form structure for cleaner logical grouping */
         .inline-form {
             display: inline;
         }
@@ -314,7 +313,6 @@
             </form>
 
             <div class="secondary-actions">
-                <!-- Resend Form -->
                 <form asp-action="Resend" method="post" class="inline-form">
                     <input type="hidden" name="email" value="@Model.Email" />
                     <button type="submit" class="btn-link btn-link-primary">
@@ -322,7 +320,6 @@
                     </button>
                 </form>
 
-                <!-- Cancel Form -->
                 <form asp-action="Cancel" method="post" class="inline-form">
                     <input type="hidden" asp-for="Email" />
                     <button type="submit" class="btn-link btn-link-danger" onclick="return confirm('Are you sure you want to cancel registration? This will delete your account.');">
@@ -371,7 +368,7 @@
                 this.vx = (Math.random() - 0.5) * 0.3;
                 this.vy = (Math.random() - 0.5) * 0.3;
                 this.size = Math.random() * 2 + 1;
-                this.color = `rgba(37, 99, 235, ${Math.random() * 0.15 + 0.05})`; // Blue tint
+                this.color = `rgba(37, 99, 235, ${Math.random() * 0.15 + 0.05})`;
             }
 
             update() {
@@ -435,7 +432,7 @@
                     if (distance < connectionDistance) {
                         ctx.beginPath();
                         let opacity = 1 - (distance / connectionDistance);
-                        ctx.strokeStyle = `rgba(37, 99, 235, ${opacity * 0.1})`; // Very subtle lines
+                        ctx.strokeStyle = `rgba(37, 99, 235, ${opacity * 0.1})`;
                         ctx.lineWidth = 1;
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);

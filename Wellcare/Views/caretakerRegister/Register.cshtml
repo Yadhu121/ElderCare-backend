@@ -14,9 +14,9 @@
     <script src="https://unpkg.com/@@phosphor-icons/web"></script>
     <style>
         :root {
-            --primary: #2563EB; /* Trustworthy Blue */
+            --primary: #2563EB;
             --primary-dark: #1E40AF;
-            --secondary: #10B981; /* Success/Health Teal */
+            --secondary: #10B981;
             --bg-color: #F8FAFC;
             --card-bg: rgba(255, 255, 255, 0.6);
             --text-main: #0F172A;
@@ -75,7 +75,7 @@
             border-radius: var(--radius-lg);
             box-shadow: var(--shadow-soft);
             width: 100%;
-            max-width: 600px; /* Slightly wider for grid */
+            max-width: 600px;
             animation: slideUp 0.6s ease-out forwards;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
@@ -167,7 +167,7 @@
 
         input, select, textarea {
             width: 100%;
-            padding: 0.875rem 1rem 0.875rem 3rem; /* Space for icon */
+            padding: 0.875rem 1rem 0.875rem 3rem;
             border: 1px solid var(--border);
             border-radius: var(--radius-pill);
             font-size: 1rem;
@@ -175,10 +175,9 @@
             transition: all 0.2s;
             background: rgba(255, 255, 255, 0.7);
             color: var(--text-main);
-            appearance: none; /* Remove default arrow for select */
+            appearance: none;
         }
 
-        /* Select doesn't strictly need icon padding if no icon, but consistent look is better */
         select {
             padding-right: 2.5rem;
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748B'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
@@ -375,10 +374,10 @@
     }
 
     <script>
-        // Use class based selection for multiple password toggles
+
         document.querySelectorAll('.toggle-password').forEach(toggle => {
             toggle.addEventListener('click', function() {
-                // Find previous sibling input
+
                 const input = this.previousElementSibling.previousElementSibling;
                 if (input && input.tagName === 'INPUT') {
                     const type = input.getAttribute('type') === 'password' ? 'text' : 'password';

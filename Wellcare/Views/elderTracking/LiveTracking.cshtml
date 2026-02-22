@@ -10,11 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"]</title>
 
-    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@@phosphor-icons/web"></script>
 
-    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
     <style>
@@ -49,7 +47,6 @@
             flex-direction: column;
         }
 
-        /* Header */
         header {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
@@ -95,7 +92,6 @@
                 color: var(--danger);
             }
 
-        /* Main Content */
         main {
             flex: 1;
             padding: 2rem;
@@ -119,7 +115,6 @@
             color: var(--text-muted);
         }
 
-        /* Status Box */
         #statusBox {
             background: white;
             padding: 1rem 1.5rem;
@@ -139,11 +134,10 @@
                 font-size: 1.25rem;
             }
 
-        /* Map Container */
         .map-card {
             background: var(--card-bg);
             border-radius: var(--radius-lg);
-            padding: 0.5rem; /* Slight border effect */
+            padding: 0.5rem;
             box-shadow: var(--shadow-lg);
             border: 1px solid var(--border);
         }
@@ -151,11 +145,10 @@
         #map {
             height: 600px;
             width: 100%;
-            border-radius: calc(var(--radius-lg) - 0.5rem); /* Inner radius */
+            border-radius: calc(var(--radius-lg) - 0.5rem);
             z-index: 1;
         }
 
-        /* Responsive */
         @@media (max-width: 768px) {
             header {
                 padding: 1rem;
@@ -182,7 +175,7 @@
             <i class="ph-fill ph-first-aid-kit"></i> Wellnest
         </a>
         <div class="user-actions">
-            <!-- Simulated User Info -->
+
             <span style="font-size: 0.875rem; color: var(--text-main); font-weight: 500;">
                 <i class="ph-bold ph-user-circle"></i> Caretaker
             </span>
@@ -207,16 +200,14 @@
         </div>
     </main>
 
-    <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <script>
-        // Getting ElderId from ViewBag as requested
+
         const elderId = @ViewBag.ElderId;
 
-        // Initialize Map
         var map = L.map('map', {
-            zoomControl: false // Custom or move zoom control if needed, leaving default for now but cleaner
+            zoomControl: false
         }).setView([10.0, 76.0], 12);
 
         L.control.zoom({
@@ -229,39 +220,36 @@
         }).addTo(map);
 
         let marker = null;
-        let route = L.polyline([], { color: '#2563EB', weight: 4 }).addTo(map); // Using Primary Blue for route
+        let route = L.polyline([], { color: '#2563EB', weight: 4 }).addTo(map);
 
-        // Status Helper
         const statusBox = document.getElementById("statusBox");
         const statusIcon = statusBox.querySelector("i");
         const statusText = statusBox.querySelector("span");
 
-        // Helper to update status UI
         function updateStatusUI(msg, type) {
             statusText.textContent = "Status: " + msg;
 
-            // Revert base classes
             statusBox.style.background = "#FFFFFF";
             statusBox.style.color = "var(--text-main)";
             statusBox.style.borderColor = "var(--border)";
 
             if (type === 'success') {
-                statusBox.style.background = "#DCFCE7"; /* Green-100 */
-                statusBox.style.color = "#166534"; /* Green-800 */
+                statusBox.style.background = "#DCFCE7";
+                statusBox.style.color = "#166534";
                 statusBox.style.borderColor = "#86EFAC";
                 statusIcon.className = "ph-fill ph-wifi-high";
             } else if (type === 'error') {
-                statusBox.style.background = "#FEE2E2"; /* Red-100 */
-                statusBox.style.color = "#991B1B"; /* Red-800 */
+                statusBox.style.background = "#FEE2E2";
+                statusBox.style.color = "#991B1B";
                 statusBox.style.borderColor = "#FCA5A5";
                 statusIcon.className = "ph-fill ph-warning-circle";
             } else if (type === 'neutral') {
-                statusBox.style.background = "#EFF6FF"; /* Blue-50 */
-                statusBox.style.color = "#1E40AF"; /* Blue-800 */
+                statusBox.style.background = "#EFF6FF";
+                statusBox.style.color = "#1E40AF";
                 statusBox.style.borderColor = "#BFDBFE";
                 statusIcon.className = "ph-fill ph-info";
             } else {
-                // Default / Waiting
+
                 statusIcon.className = "ph-bold ph-wifi-slash";
             }
         }
@@ -290,7 +278,7 @@
                 const lng = data.lng;
 
                 if (!marker) {
-                    // Create Custom Marker Icon if desired, or default
+
                     marker = L.marker([lat, lng]).addTo(map);
                     map.setView([lat, lng], 17);
                     updateStatusUI("Connected", "success");
@@ -307,7 +295,6 @@
             }
         }
 
-        // Initial call then interval
         loadLocation();
         setInterval(loadLocation, 3000);
     </script>
