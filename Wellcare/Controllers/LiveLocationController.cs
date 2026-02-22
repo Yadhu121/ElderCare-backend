@@ -23,20 +23,18 @@ namespace wellcare.Controllers
         [HttpGet("{elderId}")]
         public async Task<IActionResult> GetLocation(int elderId)
         {
-            // 1️⃣ Validate caretaker identity
+
             var caretakerIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (caretakerIdClaim == null)
                 return Unauthorized();
 
             int caretakerId = int.Parse(caretakerIdClaim);
 
-            // 2️⃣ Verify caretaker is linked to this elder
             var elders = _linkService.GetAssignedElders(caretakerId);
 
             if (!elders.Any(e => e.ElderID == elderId))
                 return Forbid();
 
-            // 3️⃣ Call microservice REST endpoint
             var microBase = _config["LocationService:RestBase"];
 
             if (string.IsNullOrEmpty(microBase))
