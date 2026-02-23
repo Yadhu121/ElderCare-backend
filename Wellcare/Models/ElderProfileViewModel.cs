@@ -1,4 +1,6 @@
-﻿namespace wellcare.Models
+﻿using System.Collections.Generic;
+
+namespace wellcare.Models
 {
     public class ElderProfileViewModel
     {
@@ -8,5 +10,6 @@
         public int Age { get; set; }
         public string Gender { get; set; }
         public DateTime LinkedAt { get; set; }
+        public List<Prescription> Prescriptions { get; set; } = new List<Prescription>();
     }
 }

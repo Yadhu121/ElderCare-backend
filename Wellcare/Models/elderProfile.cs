@@ -6,10 +6,12 @@ namespace wellcare.Models
     public class elderProfile
     {
         private readonly DBConnect _db;
+        private readonly PrescriptionTable _prescriptionRepo;
 
-        public elderProfile(DBConnect db)
+        public elderProfile(DBConnect db, PrescriptionTable prescriptionRepo)
         {
             _db = db;
+            _prescriptionRepo = prescriptionRepo;
         }
 
         public ElderProfileViewModel? GetElderProfile(int caretakerId, int elderId)
@@ -28,7 +30,7 @@ namespace wellcare.Models
             if (!reader.Read())
                 return null;
 
-            return new ElderProfileViewModel
+            var profile = new ElderProfileViewModel
             {
                 ElderId = Convert.ToInt32(reader["elderId"]),
                 ElderName = reader["elderName"].ToString(),
@@ -37,6 +39,11 @@ namespace wellcare.Models
                 Gender = reader["Gender"].ToString(),
                 LinkedAt = Convert.ToDateTime(reader["LinkedAt"])
             };
+
+            reader.Close(); 
+            profile.Prescriptions = _prescriptionRepo.GetPrescriptionsByElderId(elderId);
+
+            return profile;
         }
     }
 }
