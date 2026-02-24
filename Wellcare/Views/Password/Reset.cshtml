@@ -1,0 +1,441 @@
+﻿@model wellcare.Models.ResetPasswordModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@@phosphor-icons/web"></script>
+    <style>
+        :root {
+            --primary: #2563EB;
+            --primary-dark: #1E40AF;
+            --secondary: #10B981;
+            --bg-color: #F8FAFC;
+            --card-bg: rgba(255, 255, 255, 0.6);
+            --text-main: #0F172A;
+            --text-muted: #64748B;
+            --border: #E2E8F0;
+            --radius-lg: 24px;
+            --radius-pill: 50px;
+            --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 20px 40px -10px rgba(37, 99, 235, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        #bg-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        .login-container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .login-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            padding: 3rem 2.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-soft);
+            width: 100%;
+            max-width: 420px;
+            animation: slideUp 0.6s ease-out forwards;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+            .login-card:hover {
+                box-shadow: var(--shadow-hover);
+                background: rgba(255, 255, 255, 0.85);
+                border-color: white;
+                transform: translateY(-5px);
+            }
+
+        @@keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            color: var(--text-main);
+            letter-spacing: -0.01em;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+            .form-group label {
+                display: block;
+                font-size: 0.875rem;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+                color: var(--text-main);
+            }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            transition: color 0.2s;
+            pointer-events: none;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+            .toggle-password:hover {
+                color: var(--primary);
+            }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.875rem 2.5rem 0.875rem 3rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius-pill);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.2s;
+            background: rgba(255, 255, 255, 0.7);
+        }
+
+            .form-group input:not(.password-input) {
+                padding-right: 1rem;
+            }
+
+            .form-group input:focus {
+                outline: none;
+                border-color: var(--primary);
+                box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+                background: white;
+            }
+
+                .form-group input:focus + .input-icon {
+                    color: var(--primary);
+                }
+
+        .error {
+            font-size: 0.75rem;
+            color: #EF4444;
+            margin-top: 0.5rem;
+            margin-left: 1rem;
+            display: block;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius-pill);
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+        }
+
+            .btn-primary:hover {
+                background: var(--primary-dark);
+                transform: translateY(-2px);
+                box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.3);
+            }
+
+            .btn-primary:active {
+                transform: translateY(0);
+            }
+
+        .links {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+            .links a {
+                color: var(--primary);
+                text-decoration: none;
+                font-weight: 600;
+                transition: color 0.2s;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.25rem;
+            }
+
+                .links a:hover {
+                    color: var(--primary-dark);
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="login-container">
+        <div class="login-card">
+            <h2 class="title">Reset Password</h2>
+            <p class="subtitle">Enter the OTP sent to your email and choose a new password.</p>
+
+            <form asp-action="Reset" method="post" novalidate>
+
+                <input type="hidden" asp-for="Email" />
+
+                <div class="form-group">
+                    <label asp-for="OTP">OTP</label>
+                    <div class="input-wrapper">
+                        <input asp-for="OTP" placeholder="Enter OTP" maxlength="6" />
+                        <i class="ph-bold ph-key input-icon"></i>
+                    </div>
+                    <span asp-validation-for="OTP" class="error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="NewPassword">New Password</label>
+                    <div class="input-wrapper">
+                        <input asp-for="NewPassword" type="password" class="password-input" placeholder="New Password" />
+                        <i class="ph-bold ph-lock-key input-icon"></i>
+                        <i class="ph-bold ph-eye toggle-password"></i>
+                    </div>
+                    <span asp-validation-for="NewPassword" class="error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ConfirmPassword">Confirm Password</label>
+                    <div class="input-wrapper">
+                        <input asp-for="ConfirmPassword" type="password" class="password-input" placeholder="Confirm Password" />
+                        <i class="ph-bold ph-lock-key-open input-icon"></i>
+                        <i class="ph-bold ph-eye toggle-password"></i>
+                    </div>
+                    <span asp-validation-for="ConfirmPassword" class="error"></span>
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    Reset Password <i class="ph-bold ph-check-circle"></i>
+                </button>
+            </form>
+
+            <div class="links">
+                <a asp-controller="caretakerLogin" asp-action="Login">
+                    <i class="ph-bold ph-arrow-left"></i> Back to Login
+                </a>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+
+    <script>
+
+        document.querySelectorAll('.toggle-password').forEach(toggle => {
+            toggle.addEventListener('click', function() {
+
+                const input = this.previousElementSibling.previousElementSibling;
+                if (input && input.tagName === 'INPUT') {
+                    const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+                    input.setAttribute('type', type);
+
+                    if (this.classList.contains('ph-eye')) {
+                        this.classList.remove('ph-eye');
+                        this.classList.add('ph-eye-slash');
+                    } else {
+                        this.classList.remove('ph-eye-slash');
+                        this.classList.add('ph-eye');
+                    }
+                }
+            });
+        });
+
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+
+        let width, height;
+        let particles = [];
+        const particleCount = 50;
+        const connectionDistance = 180;
+        const mouseRange = 250;
+
+        let mouse = { x: null, y: null };
+
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        window.addEventListener('mousemove', e => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+        });
+        window.addEventListener('mouseleave', () => {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.3;
+                this.vy = (Math.random() - 0.5) * 0.3;
+                this.size = Math.random() * 2 + 1;
+                this.color = `rgba(37, 99, 235, ${Math.random() * 0.15 + 0.05})`;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+
+                if (mouse.x != null) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < mouseRange) {
+                        const forceDirectionX = dx / distance;
+                        const forceDirectionY = dy / distance;
+                        const force = (mouseRange - distance) / mouseRange;
+                        const directionX = forceDirectionX * force * 0.5;
+                        const directionY = forceDirectionY * force * 0.5;
+
+                        this.vx += directionX;
+                        this.vy += directionY;
+
+                        this.vx *= 0.96;
+                        this.vy *= 0.96;
+                    }
+                }
+            }
+
+            draw() {
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            resize();
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i; j < particles.length; j++) {
+                    let dx = particles[i].x - particles[j].x;
+                    let dy = particles[i].y - particles[j].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < connectionDistance) {
+                        ctx.beginPath();
+                        let opacity = 1 - (distance / connectionDistance);
+                        ctx.strokeStyle = `rgba(37, 99, 235, ${opacity * 0.1})`;
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+    </script>
+</body>
+</html>
