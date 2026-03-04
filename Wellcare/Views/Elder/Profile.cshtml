@@ -683,7 +683,7 @@
         const videoContainer = document.getElementById("videoContainer");
         const videoFeed = document.getElementById("videoFeed");
         const btnWatchVideo = document.getElementById("btnWatchVideo");
-        const VIDEO_BASE_URL = "https://housing-nova-rent-weekend.trycloudflare.com";
+        const VIDEO_BASE_URL = "http://localhost:5259";
 
         function toggleVideo() {
             if (isVideoPlaying) {
@@ -730,7 +730,6 @@
             polyline = L.polyline([], { color: "#2563EB", weight: 4 }).addTo(map);
         }
 
-        // Prescription Management Logic
         const overlay = document.getElementById("modalOverlay");
         const form = document.getElementById("prescriptionForm");
 
@@ -761,16 +760,7 @@
             const formData = new FormData(form);
             const data = Object.fromEntries(formData.entries());
             data.ElderID = @Model.ElderId;
-            // Get caretaker ID from somewhere? It's not in the model but we can get it from the session/context maybe?
-            // Actually, for now, let's assume we need to find it. 
-            // In a real app, you'd get it from the user claims on the server.
-            // Let's check how the controller handled it. It used ClaimTypes.NameIdentifier.
-            // The API we wrote for POST expects CaretakerID in the body.
-            // Let me check the caretaker info from the page if available.
-            // It's not explicitly there. I might need to add it or the Controller should handle it.
-            // Let's modify the Controller to handle CaretakerID from Claims if not provided.
-            // Or better, let's just send 0 and let the server fill it.
-            data.CaretakerID = 0; // Server will fill this from Claims in my preferred implementation
+            data.CaretakerID = 0;
 
             const isEdit = data.PrescriptionID != "0";
             const url = isEdit ? `/api/elder/prescription/${data.PrescriptionID}` : "/api/elder/prescription";
@@ -784,7 +774,7 @@
                 });
 
                 if (res.ok) {
-                    location.reload(); // Simplest way to refresh the list
+                    location.reload();
                 } else {
                     alert("Failed to save prescription");
                 }
