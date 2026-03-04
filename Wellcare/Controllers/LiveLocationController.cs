@@ -47,7 +47,7 @@ namespace wellcare.Controllers
 
             if (!response.IsSuccessStatusCode)
                 return NotFound();
-
+        
             var content = await response.Content.ReadAsStringAsync();
 
             return Content(content, "application/json");

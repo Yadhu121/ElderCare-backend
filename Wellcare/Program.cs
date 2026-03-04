@@ -19,6 +19,7 @@ builder.Services.AddScoped<elderTable>();
 builder.Services.AddScoped<CaretakerElderService>();
 builder.Services.AddScoped<elderProfile>();
 builder.Services.AddScoped<JwtService>();
+builder.Services.AddScoped<PrescriptionTable>();
 
 var jwtSettings = builder.Configuration.GetSection("Jwt");
 var key = Encoding.UTF8.GetBytes(jwtSettings["Key"]);
