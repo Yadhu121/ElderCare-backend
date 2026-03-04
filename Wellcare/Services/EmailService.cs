@@ -51,5 +51,55 @@ Wellnest Team
                 await client.SendMailAsync(message);
             }
         }
+
+        public async Task SendAlertEmailAsync(string toEmail, string elderName, string eventType, byte[] imageBytes)
+        {
+            var emailSettings = _configuration.GetSection("EmailSettings");
+            string host = emailSettings["Host"];
+            int port = int.Parse(emailSettings["Port"]);
+            bool enableSsl = bool.Parse(emailSettings["EnableSsl"]);
+            string userName = emailSettings["UserName"];
+            string password = emailSettings["Password"];
+            string from = emailSettings["From"];
+
+            string subject = eventType == "FALL_DETECTED"
+                ? $"FALL DETECTED - {elderName}"
+                : $"IDLE ALERT - {elderName}";
+
+            string description = eventType == "FALL_DETECTED"
+                ? $"A fall has been detected for elder {elderName}. Please check on them immediately."
+                : $"Elder {elderName} has been idle for an extended period. Please check on them.";
+
+            using var client = new SmtpClient(host, port);
+            client.EnableSsl = enableSsl;
+            client.Credentials = new NetworkCredential(userName, password);
+
+            var message = new MailMessage();
+            message.From = new MailAddress(from);
+            message.To.Add(new MailAddress(toEmail));
+            message.Subject = subject;
+            message.IsBodyHtml = true;
+            message.Body = $@"
+            <div style='font-family: sans-serif; max-width: 600px; margin: 0 auto;'>
+                <div style='background: {(eventType == "FALL_DETECTED" ? "#EF4444" : "#F59E0B")}; padding: 20px; border-radius: 12px 12px 0 0;'>
+                    <h2 style='color: white; margin: 0;'>{subject}</h2>
+                </div>
+                <div style='background: #F8FAFC; padding: 20px; border-radius: 0 0 12px 12px; border: 1px solid #E2E8F0;'>
+                    <p style='font-size: 16px; color: #0F172A;'>{description}</p>
+                    <p style='color: #64748B; font-size: 14px;'>Time: {DateTime.Now:yyyy-MM-dd HH:mm:ss}</p>
+                    <p style='color: #64748B; font-size: 14px;'>A snapshot has been attached to this email.</p>
+                    <hr style='border: 1px solid #E2E8F0; margin: 20px 0;'/>
+                    <p style='color: #94A3B8; font-size: 12px;'>Wellnest - Compassionate Care</p>
+                </div>
+            </div>";
+
+            if (imageBytes != null)
+            {
+                var stream = new MemoryStream(imageBytes);
+                message.Attachments.Add(new Attachment(stream, "snapshot.jpg", "image/jpeg"));
+            }
+
+            await client.SendMailAsync(message);
+        }
     }
 }

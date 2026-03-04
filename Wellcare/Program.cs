@@ -1,9 +1,10 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-using System.Text;
-using System.Net.WebSockets;
-using System.Text.Json;
 using System.Collections.Concurrent;
+using System.Data.SqlClient;
+using System.Net.WebSockets;
+using System.Text;
+using System.Text.Json;
 using wellcare.Models;
 using wellcare.Services;
 
@@ -14,7 +15,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<DBConnect>();
 builder.Services.AddScoped<caretakerTable>();
 builder.Services.AddScoped<OtpTable>();
-builder.Services.AddTransient<EmailService>();
+builder.Services.AddSingleton<EmailService>();
 builder.Services.AddScoped<elderTable>();
 builder.Services.AddScoped<CaretakerElderService>();
 builder.Services.AddScoped<elderProfile>();
@@ -158,6 +159,47 @@ app.Map("/ws/video", async context =>
         {
             var frameBytes = Convert.FromBase64String(imgProp.GetString());
             latestFrames[elderId] = frameBytes;
+        }
+        else if (eventType == "FALL_DETECTED" || eventType == "IDLE_DETECTED")
+        {
+            Console.WriteLine($"Alert: {eventType} for Elder {elderId}");
+
+            byte[] snapshot = null;
+            if (data.TryGetProperty("image", out var snapProp))
+                snapshot = Convert.FromBase64String(snapProp.GetString());
+
+            _ = Task.Run(async () =>
+            {
+                try
+                {
+                    var db = app.Services.GetRequiredService<DBConnect>();
+                    var emailService = app.Services.GetRequiredService<EmailService>();
+
+                    using var con = db.GetConnection();
+                    using var cmd = new SqlCommand(@"
+                        SELECT c.Email, c.FirstName, e.elderName
+                        FROM CaretakerElderMap m
+                        JOIN caretakerTable c ON c.CareTakerID = m.CareTakerID
+                        JOIN elderTable e ON e.elderId = m.ElderID
+                        WHERE m.ElderID = @elderId", con);
+
+                    cmd.Parameters.AddWithValue("@elderId", elderId);
+                    con.Open();
+
+                    using var reader = cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        string caretakerEmail = reader["Email"].ToString();
+                        string elderName = reader["elderName"].ToString();
+                        await emailService.SendAlertEmailAsync(caretakerEmail, elderName, eventType, snapshot);
+                        Console.WriteLine($"Alert email sent to {caretakerEmail}");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Failed to send alert email: {ex.Message}");
+                }
+            });
         }
     }
 });
