@@ -21,6 +21,7 @@ builder.Services.AddScoped<CaretakerElderService>();
 builder.Services.AddScoped<elderProfile>();
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<PrescriptionTable>();
+builder.Services.AddSingleton<FcmService>();
 
 var jwtSettings = builder.Configuration.GetSection("Jwt");
 var key = Encoding.UTF8.GetBytes(jwtSettings["Key"]);
@@ -87,6 +88,7 @@ var liveLocations = new ConcurrentDictionary<int, (double lat, double lon)>();
 
 var videoClients = new ConcurrentDictionary<int, List<WebSocket>>();
 var latestFrames = new ConcurrentDictionary<int, byte[]>();
+var pendingResponses = new ConcurrentDictionary<int, TaskCompletionSource<string>>();
 
 app.Map("/ws/location", async context =>
 {
@@ -174,10 +176,11 @@ app.Map("/ws/video", async context =>
                 {
                     var db = app.Services.GetRequiredService<DBConnect>();
                     var emailService = app.Services.GetRequiredService<EmailService>();
+                    var fcmService = app.Services.GetRequiredService<FcmService>();
 
                     using var con = db.GetConnection();
                     using var cmd = new SqlCommand(@"
-                        SELECT c.Email, c.FirstName, e.elderName
+                        SELECT c.Email, c.FirstName, e.elderName, e.FCMToken
                         FROM CaretakerElderMap m
                         JOIN caretakerTable c ON c.CareTakerID = m.CareTakerID
                         JOIN elderTable e ON e.elderId = m.ElderID
@@ -187,12 +190,55 @@ app.Map("/ws/video", async context =>
                     con.Open();
 
                     using var reader = cmd.ExecuteReader();
-                    if (reader.Read())
+                    if (!reader.Read()) return;
+
+                    string caretakerEmail = reader["Email"].ToString();
+                    string elderName = reader["elderName"].ToString();
+                    string fcmToken = reader["FCMToken"]?.ToString();
+                    reader.Close();
+                    con.Close();
+
+                    await emailService.SendAlertEmailAsync(caretakerEmail, elderName, eventType, snapshot);
+                    Console.WriteLine($"Alert email sent to {caretakerEmail}");
+
+                    if (!string.IsNullOrEmpty(fcmToken))
                     {
-                        string caretakerEmail = reader["Email"].ToString();
-                        string elderName = reader["elderName"].ToString();
-                        await emailService.SendAlertEmailAsync(caretakerEmail, elderName, eventType, snapshot);
-                        Console.WriteLine($"Alert email sent to {caretakerEmail}");
+                        string notifTitle = eventType == "FALL_DETECTED" ? "Fall Detected!" : "Idle Alert!";
+                        string notifBody = "Are you okay? Please respond within 60 seconds.";
+
+                        await fcmService.SendNotificationAsync(fcmToken, notifTitle, notifBody, new Dictionary<string, string>
+                        {
+                            { "elderId", elderId.ToString() },
+                            { "eventType", eventType }
+                        });
+
+                        var tcs = new TaskCompletionSource<string>();
+                        pendingResponses[elderId] = tcs;
+
+                        var timeoutTask = Task.Delay(TimeSpan.FromSeconds(60));
+                        var completedTask = await Task.WhenAny(tcs.Task, timeoutTask);
+
+                        pendingResponses.TryRemove(elderId, out _);
+
+                        if (completedTask == timeoutTask)
+                        {
+                            await emailService.SendFollowUpEmailAsync(caretakerEmail, elderName, "NO_RESPONSE");
+                            Console.WriteLine("No response from elder - follow up email sent");
+                        }
+                        else
+                        {
+                            string response = tcs.Task.Result;
+                            if (response.ToLower() == "yes")
+                            {
+                                await emailService.SendFollowUpEmailAsync(caretakerEmail, elderName, "OKAY");
+                                Console.WriteLine("Elder is okay - follow up email sent");
+                            }
+                            else
+                            {
+                                await emailService.SendFollowUpEmailAsync(caretakerEmail, elderName, "NOT_OKAY");
+                                Console.WriteLine("Elder not okay - follow up email sent");
+                            }
+                        }
                     }
                 }
                 catch (Exception ex)
@@ -223,6 +269,20 @@ app.MapGet("/stream/{elderId}", async (int elderId, HttpContext context) =>
         }
         await Task.Delay(33);
     }
+});
+
+app.MapPost("/api/elder/respond", async (HttpContext context) =>
+{
+    var body = await JsonSerializer.DeserializeAsync<JsonElement>(context.Request.Body);
+    int elderId = body.GetProperty("elderId").GetInt32();
+    string response = body.GetProperty("response").GetString();
+
+    if (pendingResponses.TryGetValue(elderId, out var tcs))
+    {
+        tcs.TrySetResult(response);
+    }
+
+    return Results.Ok();
 });
 
 app.MapControllerRoute(

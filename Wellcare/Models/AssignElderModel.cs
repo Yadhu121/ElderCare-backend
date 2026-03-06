@@ -3,6 +3,6 @@
     public class AssignElderModel
     {
         public string ElderEmail { get; set; }
-        public string ElderPassword { get; set; }
+        public string OTP { get; set; }
     }
 }

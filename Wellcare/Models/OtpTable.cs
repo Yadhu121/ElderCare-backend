@@ -99,5 +99,45 @@ namespace wellcare.Models
 
             return -1;
         }
+
+        public void InsertOtpForElderLinking(int elderId, string email, string otp)
+        {
+            using SqlConnection con = _db.GetConnection();
+            using SqlCommand cmd = new SqlCommand(@"
+        insert into ElderOTPTable (ElderID, Email, OTP, ExpiresAt, IsUsed, CreatedAt)
+        values (@elderId, @email, @otp, DATEADD(MINUTE, 10, SYSUTCDATETIME()), 0, SYSUTCDATETIME())", con);
+            cmd.Parameters.AddWithValue("@elderId", elderId);
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@otp", otp);
+            con.Open();
+            cmd.ExecuteNonQuery();
+        }
+
+        public int VerifyElderLinkingOtp(string email, string otp)
+        {
+            using SqlConnection con = _db.GetConnection();
+            using SqlCommand cmd = new SqlCommand(@"
+        select ElderID from ElderOTPTable
+        where Email = @email and OTP = @otp
+        and IsUsed = 0 AND ExpiresAt > SYSUTCDATETIME()", con);
+            cmd.Parameters.AddWithValue("@email", email);
+            cmd.Parameters.AddWithValue("@otp", otp);
+            con.Open();
+            using var reader = cmd.ExecuteReader();
+            if (!reader.Read()) return -1;
+            int elderId = Convert.ToInt32(reader["ElderID"]);
+            reader.Close();
+            con.Close();
+
+            using SqlCommand updateCmd = new SqlCommand(@"
+        update ElderOTPTable set IsUsed = 1 
+        where Email = @email and OTP = @otp", con);
+            updateCmd.Parameters.AddWithValue("@email", email);
+            updateCmd.Parameters.AddWithValue("@otp", otp);
+            con.Open();
+            updateCmd.ExecuteNonQuery();
+
+            return elderId;
+        }
     }
 }

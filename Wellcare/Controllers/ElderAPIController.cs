@@ -51,16 +51,11 @@ namespace wellcare.Controllers
         public IActionResult Login([FromBody] ElderLogin model, [FromServices] JwtService jwt)
         {
             using SqlConnection con = _db.GetConnection();
-
             SqlCommand cmd = new SqlCommand(
-                "SELECT ElderId, PasswordHash, elderMail FROM elderTable WHERE elderMail = @mail",
-                con);
-
+                "SELECT ElderId, PasswordHash, elderMail FROM elderTable WHERE elderMail = @mail", con);
             cmd.Parameters.AddWithValue("@mail", model.ElderMail);
-
             con.Open();
             using var reader = cmd.ExecuteReader();
-
             if (!reader.Read())
                 return Unauthorized("Invalid credentials");
 
@@ -71,8 +66,18 @@ namespace wellcare.Controllers
             if (!BCrypt.Net.BCrypt.Verify(model.Password, hash))
                 return Unauthorized("Invalid credentials");
 
-            string token = jwt.GenerateElderToken(elderId, email);
+            reader.Close();
 
+            if (!string.IsNullOrEmpty(model.FCMToken))
+            {
+                using SqlCommand updateCmd = new SqlCommand(
+                    "UPDATE elderTable SET FCMToken = @token WHERE ElderId = @id", con);
+                updateCmd.Parameters.AddWithValue("@token", model.FCMToken);
+                updateCmd.Parameters.AddWithValue("@id", elderId);
+                updateCmd.ExecuteNonQuery();
+            }
+
+            string token = jwt.GenerateElderToken(elderId, email);
             return Ok(new { token, elderId });
         }
     }
