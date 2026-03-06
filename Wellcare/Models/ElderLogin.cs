@@ -9,5 +9,6 @@ namespace wellcare.Models
 
         [Required]
         public string Password { get; set; }
+        public string FCMToken { get; set; }
     }
 }

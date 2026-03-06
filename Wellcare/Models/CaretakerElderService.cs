@@ -52,5 +52,25 @@ namespace wellcare.Models
 
             return elders;
         }
+
+        public int AssignElderById(int caretakerId, int elderId)
+        {
+            using SqlConnection con = _db.GetConnection();
+            using SqlCommand cmd = new SqlCommand(@"
+        if exists (select 1 from CaretakerElderMap where ElderID = @elderId)
+            select -2 AS Status
+        else
+        begin
+            insert into CaretakerElderMap (CareTakerID, ElderID) values (@caretakerId, @elderId)
+            select 1 AS Status
+        end", con);
+            cmd.Parameters.AddWithValue("@caretakerId", caretakerId);
+            cmd.Parameters.AddWithValue("@elderId", elderId);
+            con.Open();
+            using var reader = cmd.ExecuteReader();
+            if (reader.Read())
+                return Convert.ToInt32(reader["Status"]);
+            return -99;
+        }
     }
 }
