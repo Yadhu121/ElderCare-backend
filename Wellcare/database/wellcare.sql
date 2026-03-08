@@ -330,6 +330,26 @@ BEGIN
 END
 GO
 
+/* 12.5 Unassign Elder from Caretaker */
+CREATE OR ALTER PROCEDURE sp_unassign_elder_from_caretaker
+    @CareTakerID INT,
+    @ElderID INT
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF NOT EXISTS (SELECT 1 FROM CaretakerElderMap WHERE CareTakerID = @CareTakerID AND ElderID = @ElderID)
+    BEGIN
+        SELECT -1 AS Status;
+        RETURN;
+    END
+
+    DELETE FROM CaretakerElderMap WHERE CareTakerID = @CareTakerID AND ElderID = @ElderID;
+
+    SELECT 1 AS Status;
+END
+GO
+
 /* 13. Prescription Table */
 IF OBJECT_ID('Prescription', 'U') IS NULL
 BEGIN
@@ -416,3 +436,27 @@ BEGIN
 END
 GO
 
+/* 18. Add FCMToken to Elder Table */
+IF COL_LENGTH('elderTable', 'FCMToken') IS NULL
+BEGIN
+    ALTER TABLE elderTable ADD FCMToken NVARCHAR(500) NULL;
+END
+GO
+
+/* 19. Elder OTP Table */
+IF OBJECT_ID('ElderOTPTable', 'U') IS NULL
+BEGIN
+    CREATE TABLE ElderOTPTable (
+        ID INT IDENTITY(1,1) PRIMARY KEY,
+        ElderID INT NOT NULL,
+        Email NVARCHAR(256) NOT NULL,
+        OTP NVARCHAR(10) NOT NULL,
+        ExpiresAt DATETIME2(3) NOT NULL,
+        IsUsed BIT NOT NULL DEFAULT 0,
+        CreatedAt DATETIME2(3) NOT NULL DEFAULT SYSUTCDATETIME(),
+        CONSTRAINT FK_ElderOTP_Elder FOREIGN KEY (ElderID) REFERENCES elderTable(elderId)
+    );
+END
+GO
+
+/* complete code */

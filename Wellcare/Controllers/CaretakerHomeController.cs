@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using wellcare.Models;
@@ -42,6 +42,30 @@ namespace wellcare.Controllers
         public IActionResult caretakerProfile()
         {
             return RedirectToAction("careProfile", "caretaker");
+        }
+
+        [HttpPost]
+        public IActionResult Unassign(int elderId)
+        {
+            var caretakerIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (caretakerIdClaim == null)
+            {
+                return RedirectToAction("Login", "caretakerLogin");
+            }
+
+            int caretakerId = int.Parse(caretakerIdClaim);
+            int result = _linkService.UnassignElder(caretakerId, elderId);
+
+            if (result == 1)
+            {
+                TempData["SuccessMessage"] = "Elder unassigned successfully.";
+            }
+            else
+            {
+                TempData["ErrorMessage"] = "Failed to unassign elder.";
+            }
+
+            return RedirectToAction("Index");
         }
     }
 }
