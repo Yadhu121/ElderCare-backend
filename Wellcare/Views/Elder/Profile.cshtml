@@ -1,4 +1,4 @@
-﻿@model wellcare.Models.ElderProfileViewModel
+@model wellcare.Models.ElderProfileViewModel
 
 @{
     Layout = null;
@@ -493,6 +493,13 @@
                 <div id="statusBox">
                     <i class="ph-bold ph-circle"></i> Status: Not started
                 </div>
+                
+                <form asp-controller="CaretakerHome" asp-action="Unassign" method="post" onsubmit="return confirm('Are you sure you want to unassign this elder?');" style="margin-left: auto;">
+                    <input type="hidden" name="elderId" value="@Model.ElderId" />
+                    <button type="submit" class="btn-primary" style="background: var(--danger); box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.2);">
+                        <i class="ph-bold ph-trash"></i> Unassign Elder
+                    </button>
+                </form>
             </div>
 
             <div id="videoContainer" class="video-container">

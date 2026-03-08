@@ -1,4 +1,4 @@
-﻿using System.Data;
+using System.Data;
 using System.Data.SqlClient;
 using System.Collections.Generic;
 
@@ -70,6 +70,26 @@ namespace wellcare.Models
             using var reader = cmd.ExecuteReader();
             if (reader.Read())
                 return Convert.ToInt32(reader["Status"]);
+            return -99;
+        }
+
+        public int UnassignElder(int caretakerId, int elderId)
+        {
+            using SqlConnection con = _db.GetConnection();
+            using SqlCommand cmd = new SqlCommand("sp_unassign_elder_from_caretaker", con);
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@CareTakerID", caretakerId);
+            cmd.Parameters.AddWithValue("@ElderID", elderId);
+
+            con.Open();
+
+            using var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                return Convert.ToInt32(reader["Status"]);
+            }
+
             return -99;
         }
     }
