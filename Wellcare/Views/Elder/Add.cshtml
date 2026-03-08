@@ -1,4 +1,4 @@
-﻿@model wellcare.Models.AssignElderModel
+@model wellcare.Models.AssignElderModel
 
 @{
     Layout = null;
@@ -91,11 +91,11 @@
         .card {
             background: var(--card-bg);
             border-radius: var(--radius-lg);
-            padding: 3rem;
+            padding: 2.5rem;
             box-shadow: var(--shadow-lg);
             border: 1px solid var(--border);
             width: 100%;
-            max-width: 500px;
+            max-width: 420px;
             height: fit-content;
         }
 
@@ -226,26 +226,6 @@
             <h2 class="form-title">Link an Elder</h2>
             <p class="form-subtitle">Enter the elder's email to send them a verification OTP.</p>
 
-            @if (TempData["Error"] != null)
-            {
-                <div class="alert alert-error">
-                    <i class="ph-bold ph-warning-circle"></i> @TempData["Error"]
-                </div>
-            }
-
-            @if (ViewBag.Error != null)
-            {
-                <div class="alert alert-error">
-                    <i class="ph-bold ph-warning-circle"></i> @ViewBag.Error
-                </div>
-            }
-
-            @if (TempData["OtpSent"] != null)
-            {
-                <div class="alert alert-success">
-                    <i class="ph-bold ph-check-circle"></i> OTP sent to elder's email!
-                </div>
-            }
 
             <form asp-action="SendOtp" method="post">
                 <div class="form-group">
@@ -282,5 +262,55 @@
             }
         </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            @if (ViewBag.Error != null)
+            {
+                <text>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: '@ViewBag.Error',
+                    confirmButtonColor: '#2563EB',
+                    customClass: { popup: 'swal-custom-radius' }
+                });
+                </text>
+            }
+            else if (TempData["Error"] != null)
+            {
+                <text>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: '@TempData["Error"]',
+                    confirmButtonColor: '#2563EB',
+                    customClass: { popup: 'swal-custom-radius' }
+                });
+                </text>
+            }
+
+            @if (TempData["OtpSent"] != null)
+            {
+                <text>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: 'OTP sent to elder\\'s email!',
+                    confirmButtonColor: '#2563EB',
+                    customClass: { popup: 'swal-custom-radius' }
+                });
+                </text>
+            }
+        });
+    </script>
+    <style>
+        .swal-custom-radius {
+            border-radius: 24px !important;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            width: 380px !important;
+            padding: 1.5em 1em 1em !important;
+        }
+    </style>
 </body>
 </html>
