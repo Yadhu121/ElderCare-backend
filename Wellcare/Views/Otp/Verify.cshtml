@@ -1,4 +1,4 @@
-﻿@model wellcare.Models.OtpVerifyModel
+@model wellcare.Models.OtpVerifyModel
 
 @{
     Layout = null;
@@ -279,21 +279,6 @@
         <div class="login-card">
             <h2 class="title">Email Verification</h2>
 
-            @if (ViewBag.Error != null)
-            {
-                <div class="alert alert-error">
-                    <i class="ph-bold ph-warning-circle"></i>
-                    @ViewBag.Error
-                </div>
-            }
-
-            @if (TempData["message"] != null)
-            {
-                <div class="alert alert-success">
-                    <i class="ph-bold ph-check-circle"></i>
-                    @TempData["message"]
-                </div>
-            }
 
             <form asp-action="Verify" method="post" novalidate>
                 <input type="hidden" asp-for="Email" />
@@ -320,9 +305,9 @@
                     </button>
                 </form>
 
-                <form asp-action="Cancel" method="post" class="inline-form">
+                <form id="cancelForm" asp-action="Cancel" method="post" class="inline-form">
                     <input type="hidden" asp-for="Email" />
-                    <button type="submit" class="btn-link btn-link-danger" onclick="return confirm('Are you sure you want to cancel registration? This will delete your account.');">
+                    <button type="button" class="btn-link btn-link-danger" onclick="confirmCancel()">
                         Cancel & Delete Account
                     </button>
                 </form>
@@ -446,6 +431,66 @@
 
         init();
         animate();
+
+        function confirmCancel() {
+            Swal.fire({
+                title: 'Cancel Registration?',
+                text: "Are you sure you want to cancel registration? This will delete your account.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#EF4444',
+                cancelButtonColor: '#64748B',
+                confirmButtonText: 'Yes, delete it!',
+                customClass: {
+                    popup: 'swal-custom-radius'
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('cancelForm').submit();
+                }
+            })
+        }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            @if (ViewBag.Error != null)
+            {
+                <text>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Verification Failed',
+                    text: '@ViewBag.Error',
+                    confirmButtonColor: '#2563EB',
+                    customClass: {
+                        popup: 'swal-custom-radius'
+                    }
+                });
+                </text>
+            }
+            @if (TempData["message"] != null)
+            {
+                <text>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: '@TempData["message"]',
+                    confirmButtonColor: '#2563EB',
+                    customClass: {
+                        popup: 'swal-custom-radius'
+                    }
+                });
+                </text>
+            }
+        });
+    </script>
+    <style>
+        .swal-custom-radius {
+            border-radius: 24px !important;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            width: 380px !important;
+            padding: 1.5em 1em 1em !important;
+        }
+    </style>
 </body>
 </html>

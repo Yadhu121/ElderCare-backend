@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using wellcare.Models;
 using wellcare.Services;
 
@@ -55,7 +55,6 @@ namespace wellcare.Controllers
                 return View(model);
                 //return Unauthorized(new { message = "Invalid password" });
             }
-            TempData["message"] = "Successful Login";
             //HttpContext.Session.SetInt32("CareTakerID", result.CareTakerID);
             //HttpContext.Session.SetString("CareTakerName", result.FirstName);
 

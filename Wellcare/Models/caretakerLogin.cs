@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 
 namespace wellcare.Models
 {
@@ -6,7 +6,7 @@ namespace wellcare.Models
     {
         [Required, EmailAddress]
         public string Email { get; set; }
-        [Required, MinLength(8)]
+        [Required]
         public string Password { get; set; }
     }
 }

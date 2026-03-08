@@ -1,4 +1,4 @@
-﻿@model wellcare.Models.caretakerLogin
+@model wellcare.Models.caretakerLogin
 
 @{
     Layout = null;
@@ -426,5 +426,46 @@
         init();
         animate();
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            @if (ViewBag.Error != null)
+            {
+                <text>
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: '@ViewBag.Error',
+                    confirmButtonColor: '#2563EB',
+                    customClass: {
+                        popup: 'swal-custom-radius'
+                    }
+                });
+                </text>
+            }
+            @if (TempData["message"] != null)
+            {
+                <text>
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: '@TempData["message"]',
+                    confirmButtonColor: '#2563EB',
+                    customClass: {
+                        popup: 'swal-custom-radius'
+                    }
+                });
+                </text>
+            }
+        });
+    </script>
+    <style>
+        .swal-custom-radius {
+            border-radius: 24px !important;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            width: 380px !important;
+            padding: 1.5em 1em 1em !important;
+        }
+    </style>
 </body>
 </html>

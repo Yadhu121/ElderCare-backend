@@ -494,9 +494,9 @@
                     <i class="ph-bold ph-circle"></i> Status: Not started
                 </div>
                 
-                <form asp-controller="CaretakerHome" asp-action="Unassign" method="post" onsubmit="return confirm('Are you sure you want to unassign this elder?');" style="margin-left: auto;">
+                <form id="unassignForm" asp-controller="CaretakerHome" asp-action="Unassign" method="post" style="margin-left: auto;">
                     <input type="hidden" name="elderId" value="@Model.ElderId" />
-                    <button type="submit" class="btn-primary" style="background: var(--danger); box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.2);">
+                    <button type="button" class="btn-primary" onclick="confirmUnassign()" style="background: var(--danger); box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.2);">
                         <i class="ph-bold ph-trash"></i> Unassign Elder
                     </button>
                 </form>
@@ -783,29 +783,66 @@
                 if (res.ok) {
                     location.reload();
                 } else {
-                    alert("Failed to save prescription");
+                    Swal.fire({ icon: 'error', title: 'Error', text: 'Failed to save prescription', confirmButtonColor: '#2563EB', customClass: { popup: 'swal-custom-radius' } });
                 }
             } catch (err) {
                 console.error(err);
-                alert("An error occurred");
+                Swal.fire({ icon: 'error', title: 'Error', text: 'An error occurred', confirmButtonColor: '#2563EB', customClass: { popup: 'swal-custom-radius' } });
             }
         });
 
-        async function deletePrescription(id) {
-            if (!confirm("Are you sure you want to delete this prescription?")) return;
-
-            try {
-                const res = await fetch(`/api/elder/prescription/${id}`, { method: 'DELETE' });
-                if (res.ok) {
-                    location.reload();
-                } else {
-                    alert("Failed to delete");
+        function deletePrescription(id) {
+            Swal.fire({
+                title: 'Delete Prescription?',
+                text: "Are you sure you want to delete this prescription?",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#EF4444',
+                cancelButtonColor: '#64748B',
+                confirmButtonText: 'Yes, delete it!',
+                customClass: { popup: 'swal-custom-radius' }
+            }).then(async (result) => {
+                if (result.isConfirmed) {
+                    try {
+                        const res = await fetch(`/api/elder/prescription/${id}`, { method: 'DELETE' });
+                        if (res.ok) {
+                            location.reload();
+                        } else {
+                            Swal.fire({ icon: 'error', title: 'Error', text: 'Failed to delete', confirmButtonColor: '#2563EB', customClass: { popup: 'swal-custom-radius' } });
+                        }
+                    } catch (err) {
+                        console.error(err);
+                        Swal.fire({ icon: 'error', title: 'Error', text: 'An error occurred', confirmButtonColor: '#2563EB', customClass: { popup: 'swal-custom-radius' } });
+                    }
                 }
-            } catch (err) {
-                console.error(err);
-                alert("An error occurred");
-            }
+            });
+        }
+
+        function confirmUnassign() {
+            Swal.fire({
+                title: 'Unassign Elder?',
+                text: "Are you sure you want to unassign this elder? You will no longer be able to track or monitor them.",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#EF4444',
+                cancelButtonColor: '#64748B',
+                confirmButtonText: 'Yes, unassign',
+                customClass: { popup: 'swal-custom-radius' }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    document.getElementById('unassignForm').submit();
+                }
+            });
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        .swal-custom-radius {
+            border-radius: 24px !important;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            width: 380px !important;
+            padding: 1.5em 1em 1em !important;
+        }
+    </style>
 </body>
 </html>
