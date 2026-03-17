@@ -1,0 +1,5 @@
+﻿public class HomeLocationModel
+{
+    public double Lat { get; set; }
+    public double Lng { get; set; }
+}
