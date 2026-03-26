@@ -84,22 +84,22 @@ namespace wellcare.Controllers
             return Ok(new { token, elderId, elderName });
         }
 
-        [HttpPost("set-home")]
-        [Authorize]
-        public IActionResult SetHome([FromBody] HomeLocationModel model)
-        {
-            var elderIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            int elderId = int.Parse(elderIdClaim);
+        //[HttpPost("set-home")]
+        //[Authorize]
+        //public IActionResult SetHome([FromBody] HomeLocationModel model)
+        //{
+        //    var elderIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        //    int elderId = int.Parse(elderIdClaim);
 
-            using SqlConnection con = _db.GetConnection();
-            using SqlCommand cmd = new SqlCommand(
-                "UPDATE elderTable SET HomeLat = @lat, HomeLng = @lng WHERE ElderId = @id", con);
-            cmd.Parameters.AddWithValue("@lat", model.Lat);
-            cmd.Parameters.AddWithValue("@lng", model.Lng);
-            cmd.Parameters.AddWithValue("@id", elderId);
-            con.Open();
-            cmd.ExecuteNonQuery();
-            return Ok("Home location saved.");
-        }
+        //    using SqlConnection con = _db.GetConnection();
+        //    using SqlCommand cmd = new SqlCommand(
+        //        "UPDATE elderTable SET HomeLat = @lat, HomeLng = @lng WHERE ElderId = @id", con);
+        //    cmd.Parameters.AddWithValue("@lat", model.Lat);
+        //    cmd.Parameters.AddWithValue("@lng", model.Lng);
+        //    cmd.Parameters.AddWithValue("@id", elderId);
+        //    con.Open();
+        //    cmd.ExecuteNonQuery();
+        //    return Ok("Home location saved.");
+        //}
     }
 }
