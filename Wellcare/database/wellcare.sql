@@ -459,4 +459,6 @@ BEGIN
 END
 GO
 
+ALTER TABLE elderTable ADD HomeLat FLOAT NULL, HomeLng FLOAT NULL;
+
 /* complete code */

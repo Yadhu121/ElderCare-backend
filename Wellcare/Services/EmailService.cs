@@ -160,5 +160,44 @@ Wellnest Team
 
             await client.SendMailAsync(message);
         }
+
+        public async Task SendGeofenceAlertAsync(string toEmail, string elderName, string type)
+        {
+            bool isLeft = type == "LEFT";
+            string subject = isLeft
+                ? $"GEOFENCE ALERT - {elderName} has left the safe zone"
+                : $"GEOFENCE ALERT - {elderName} has returned to the safe zone";
+
+            string color = isLeft ? "#EF4444" : "#10B981";
+            string body = isLeft
+                ? $"{elderName} has moved more than 1km away from their home location."
+                : $"{elderName} has returned within 1km of their home location.";
+
+            // reuse your existing SMTP setup from the other methods
+            var emailSettings = _configuration.GetSection("EmailSettings");
+            using var client = new SmtpClient(emailSettings["Host"], int.Parse(emailSettings["Port"]));
+            client.EnableSsl = bool.Parse(emailSettings["EnableSsl"]);
+            client.Credentials = new NetworkCredential(emailSettings["UserName"], emailSettings["Password"]);
+
+            var message = new MailMessage();
+            message.From = new MailAddress(emailSettings["From"]);
+            message.To.Add(new MailAddress(toEmail));
+            message.Subject = subject;
+            message.IsBodyHtml = true;
+            message.Body = $@"
+        <div style='font-family: sans-serif; max-width: 600px; margin: 0 auto;'>
+            <div style='background: {color}; padding: 20px; border-radius: 12px 12px 0 0;'>
+                <h2 style='color: white; margin: 0;'>{subject}</h2>
+            </div>
+            <div style='background: #F8FAFC; padding: 20px; border-radius: 0 0 12px 12px; border: 1px solid #E2E8F0;'>
+                <p style='font-size: 16px; color: #0F172A;'>{body}</p>
+                <p style='color: #64748B; font-size: 14px;'>Time: {DateTime.Now:yyyy-MM-dd HH:mm:ss}</p>
+                <hr style='border: 1px solid #E2E8F0; margin: 20px 0;'/>
+                <p style='color: #94A3B8; font-size: 12px;'>Wellnest - Compassionate Care</p>
+            </div>
+        </div>";
+
+            await client.SendMailAsync(message);
+        }
     }
 }

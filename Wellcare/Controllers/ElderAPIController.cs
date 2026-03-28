@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
+using System.Security.Claims;
 using wellcare.Models;
 using wellcare.Services;
 
@@ -52,7 +54,7 @@ namespace wellcare.Controllers
         {
             using SqlConnection con = _db.GetConnection();
             SqlCommand cmd = new SqlCommand(
-                "SELECT ElderId, PasswordHash, elderMail FROM elderTable WHERE elderMail = @mail", con);
+                "SELECT ElderId, PasswordHash, elderMail, elderName FROM elderTable WHERE elderMail = @mail", con);
             cmd.Parameters.AddWithValue("@mail", model.ElderMail);
             con.Open();
             using var reader = cmd.ExecuteReader();
@@ -62,6 +64,7 @@ namespace wellcare.Controllers
             int elderId = reader.GetInt32(0);
             string hash = reader.GetString(1);
             string email = reader.GetString(2);
+            string elderName = reader.GetString(3);
 
             if (!BCrypt.Net.BCrypt.Verify(model.Password, hash))
                 return Unauthorized("Invalid credentials");
@@ -78,7 +81,25 @@ namespace wellcare.Controllers
             }
 
             string token = jwt.GenerateElderToken(elderId, email);
-            return Ok(new { token, elderId });
+            return Ok(new { token, elderId, elderName });
         }
+
+        //[HttpPost("set-home")]
+        //[Authorize]
+        //public IActionResult SetHome([FromBody] HomeLocationModel model)
+        //{
+        //    var elderIdClaim = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        //    int elderId = int.Parse(elderIdClaim);
+
+        //    using SqlConnection con = _db.GetConnection();
+        //    using SqlCommand cmd = new SqlCommand(
+        //        "UPDATE elderTable SET HomeLat = @lat, HomeLng = @lng WHERE ElderId = @id", con);
+        //    cmd.Parameters.AddWithValue("@lat", model.Lat);
+        //    cmd.Parameters.AddWithValue("@lng", model.Lng);
+        //    cmd.Parameters.AddWithValue("@id", elderId);
+        //    con.Open();
+        //    cmd.ExecuteNonQuery();
+        //    return Ok("Home location saved.");
+        //}
     }
 }
